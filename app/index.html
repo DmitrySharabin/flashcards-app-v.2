@@ -14,21 +14,58 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <!-- App CSS -->
-    <link rel="stylesheet" href="/app/css/app.css">
+    <link rel="stylesheet" href="css/app.css">
     <title>Flashcards</title>
 </head>
 
-<body>
+<body mv-app="flashcards" mv-storage="local" mv-init="example.json">
 
     <header>
+
+        <h1>Flashcards</h1>
+
+        <aside property="settings">
+
+            <meta property="characters" content="àâäçèéêëîïôùûüœ">
+
+        </aside>
 
     </header>
 
     <main>
 
+        <article mv-multiple="flashcard">
+
+            <span mv-value="uppercase(source[0])" mv-default></span>
+            <span mv-value="lowercase(source[0])" mv-default></span>
+
+            <p property="source"></p>
+            <details>
+                <summary>Special Characters</summary>
+                <button mv-multiple="character"
+                        mv-value="split(uppercase(characters) & characters, '')"
+                        mv-action="set(source, source & character)"
+                        mv-attribute="none"></button>
+            </details>
+
+            <p property="translation"></p>
+
+            <p property="example"></p>
+            <details>
+                <summary>Special Characters</summary>
+                <button mv-multiple
+        				mv-value="character"
+        				mv-action="set(example, example & character[$index])"
+                        mv-attribute="none"></button>
+            </details>
+        </article>
+
     </main>
 
     <footer>
+
+        Made with care by <a href="https://d12n.me" target="_blank">Dmitry Sharabin</a>
+        using <a href="https://mavo.io" target="_blank">Mavo</a>.
 
     </footer>
 

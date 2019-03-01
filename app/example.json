@@ -1,0 +1,32 @@
+{
+    "settings": {
+		"characters": "àâäçèéêëîïôùûüœ"
+	},
+    "flashcard": [
+		{
+			"source": "Noël",
+			"translation": "Christmas",
+			"example": "Joyeux Noël !"
+		},
+		{
+			"source": "Musée",
+			"translation": "Museum",
+			"example": "Une ville musée."
+		},
+		{
+			"source": "Monument",
+			"translation": "Monument",
+			"example": "Monument à la gloire d'un héros de guerre."
+		},
+		{
+			"source": "Théâtre",
+			"translation": "Theatre",
+			"example": "C'est un homme de théâtre."
+		},
+		{
+			"source": "École",
+			"translation": "School",
+			"example": "Le directeur a réuni toute l'école."
+		}
+	]
+}
