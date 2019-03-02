@@ -108,6 +108,33 @@ footer {
     }
 }
 
+[class*="mv-add-flashcard"] {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 1rem 2rem 0;
+    padding: 1.35rem;
+    padding-top: 1.2rem;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    color: var(--bg-circle-color);
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+    border: none;
+    border-radius: 2.25rem;
+    background-color: var(--flashcard-bg-color);
+    box-shadow: 2px 3px 20px hsla(0, 0%, 0%, 0.7);
+    cursor: pointer;
+    transition: width 0.2s ease-in-out;
+
+    &:hover {
+        width: 19rem;
+    }
+
+    .fa {
+        margin-right: 1.25rem;
+    }
+}
 
 main {
     margin: 2rem 1rem;
@@ -136,7 +163,7 @@ footer {
     background-color: var(--flashcard-bg-color);
 
     // The shadow is taken from https://mavo.io/demos/todo/
-    box-shadow: 2px 3px 20px black, 0 0 60px hsl(30, 80%, 30%) inset;
+    box-shadow: 2px 3px 20px hsla(0, 0%, 0%, 0.9), 0 0 60px hsl(30, 80%, 30%) inset;
 
     background-image: radial-gradient(at 50% 0, var(--text-color), transparent 60%);
     background-position-y: calc(var(--circle-r) * 1.4);

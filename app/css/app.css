@@ -83,6 +83,29 @@ footer {
 [property="settings"][mv-mode="edit"] [class="mv-edit"]::before {
   color: #ff3333; }
 
+[class*="mv-add-flashcard"] {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin: 1rem 2rem 0;
+  padding: 1.35rem;
+  padding-top: 1.2rem;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--bg-circle-color);
+  font-size: 2.2rem;
+  line-height: 2.2rem;
+  border: none;
+  border-radius: 2.25rem;
+  background-color: var(--flashcard-bg-color);
+  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transition: width 0.2s ease-in-out; }
+  [class*="mv-add-flashcard"]:hover {
+    width: 19rem; }
+  [class*="mv-add-flashcard"] .fa {
+    margin-right: 1.25rem; }
+
 main {
   margin: 2rem 1rem;
   display: grid;
@@ -104,7 +127,7 @@ footer {
   color: var(--text-color);
   border-radius: 4rem;
   background-color: var(--flashcard-bg-color);
-  box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.9), 0 0 60px #8a4d0f inset;
   background-image: radial-gradient(at 50% 0, var(--text-color), transparent 60%);
   background-position-y: calc(var(--circle-r) * 1.4);
   background-size: 100% 0.25rem;
