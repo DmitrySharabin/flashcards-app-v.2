@@ -80,6 +80,9 @@ footer {
 [property="settings"]:not([mv-mode="edit"]) [class*="fa-font"] {
   display: none; }
 
+[property="settings"][mv-mode="edit"] [class="mv-edit"]::before {
+  color: #ff3333; }
+
 main {
   margin: 2rem 1rem;
   display: grid;
@@ -219,10 +222,15 @@ footer {
     display: none; }
   [property="characters"][mv-mode="edit"]::before {
     content: "A" !important;
+    margin-right: 1rem;
     font-weight: 300;
-    font-family: inherit;
+    font-family: initial;
     font-size: 2.2rem;
-    line-height: 2.2rem; } }
+    line-height: 2.2rem; }
+  [class="mv-edit"] {
+    overflow: hidden;
+    width: 1.8rem;
+    margin-right: 1rem; } }
 
 [property="flashcard"]:not([mv-mode="edit"]) details {
   display: none; }

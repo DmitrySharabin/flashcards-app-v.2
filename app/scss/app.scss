@@ -102,6 +102,10 @@ footer {
     &:not([mv-mode="edit"]) [class*="fa-font"] {
         display: none;
     }
+
+    &[mv-mode="edit"] [class="mv-edit"]::before {
+        color: hsl(0, 100%, 60%);
+    }
 }
 
 
@@ -290,10 +294,17 @@ footer {
 
     [property="characters"][mv-mode="edit"]::before {
         content: "A" !important;
+        margin-right: 1rem;
         font-weight: 300;
-        font-family: inherit;
+        font-family: initial;
         font-size: 2.2rem;
         line-height: 2.2rem;
+    }
+
+    [class="mv-edit"] {
+        overflow: hidden;
+        width: 1.8rem;
+        margin-right: 1rem;
     }
 }
 
