@@ -160,6 +160,10 @@ footer {
     }
 
     &[mv-mode="edit"] {
+        >p {
+            margin-bottom: 0;
+        }
+
         details {
             margin: 0;
             font-family: 'Marck Script', cursive;
@@ -186,26 +190,37 @@ footer {
                 border-color: var(--text-color);
                 transition: all 0.2s ease-out;
 
-                &:hover {
+                &:hover,
+                .on {
                     background-color: var(--label-color);
                     color: var(--flashcard-bg-color);
                     border-color: var(--flashcard-bg-color);
                 }
+
+                &:last-of-type {
+                    display:block;
+                    margin: 1rem auto;
+                    width: 90%;
+                    border-radius: initial;
+                }
+            }
+
+            &:first-of-type {
+                padding: 0.7rem 0;
+            }
+
+            &:last-of-type {
+                padding-top: 0.5rem;
+                padding-bottom: 1rem;
             }
         }
 
-        details:first-of-type {
-            padding-bottom: 1.2rem;
+        [property="translation"] {
+            margin-top: 3rem;
         }
 
-        details:last-of-type {
-            padding-top: 0.5rem;
-            padding-bottom: 1rem;
-        }
-
-        [property="source"],
-        [property="example"] {
-            margin-bottom: 0;
+        meta {
+            display: none;
         }
     }
 }

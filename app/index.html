@@ -40,24 +40,34 @@
                  data-bgc-index="{ $index mod 5 + 1 }"
                  mv-expressions="{ }">
 
-            <p property="source" aria-label="Word or Phrase" mv-edit-placeholder=""></p>
-            <details>
+            <p property="source" aria-label="Word or Phrase"></p>
+            <details mv-if="len(characters) > 0">
                 <summary>Special Characters</summary>
+
+                <meta property="shift" content="false" mv-storage="none">
+
                 <button mv-multiple="character"
-                        mv-value="split(uppercase(characters) & characters, '')"
+                        mv-value="if(shift, split(uppercase(characters), ''), split(characters, ''))"
                         mv-action="set(source, source & character)"
                         mv-attribute="none"></button>
+
+                <button mv-action="set(shift, !shift)"
+                        class="[if(shift, on)]">⇪ Shift</button>
             </details>
 
-            <p property="translation" mv-edit-placeholder=""></p>
+            <p property="translation"></p>
 
-            <p property="example" mv-edit-placeholder=""></p>
-            <details>
+            <p property="example"></p>
+            <details mv-if="len(characters) > 0">
                 <summary>Special Characters</summary>
+
                 <button mv-multiple
         				mv-value="character"
         				mv-action="set(example, example & character[$index])"
                         mv-attribute="none"></button>
+
+                <button mv-action="set(shift, !shift)"
+                        class="[if(shift, on)]">⇪ Shift</button>
             </details>
         </article>
 

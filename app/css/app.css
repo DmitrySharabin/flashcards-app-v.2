@@ -127,6 +127,8 @@ footer {
     margin-top: 3.2rem;
     font-size: 1.8rem;
     line-height: 1.8rem; }
+  [property="flashcard"][mv-mode="edit"] > p {
+    margin-bottom: 0; }
   [property="flashcard"][mv-mode="edit"] details {
     margin: 0;
     font-family: 'Marck Script', cursive;
@@ -149,18 +151,25 @@ footer {
       background-color: var(--flashcard-bg-color);
       border-color: var(--text-color);
       transition: all 0.2s ease-out; }
-      [property="flashcard"][mv-mode="edit"] details button:hover {
+      [property="flashcard"][mv-mode="edit"] details button:hover,
+      [property="flashcard"][mv-mode="edit"] details button .on {
         background-color: var(--label-color);
         color: var(--flashcard-bg-color);
         border-color: var(--flashcard-bg-color); }
-  [property="flashcard"][mv-mode="edit"] details:first-of-type {
-    padding-bottom: 1.2rem; }
-  [property="flashcard"][mv-mode="edit"] details:last-of-type {
-    padding-top: 0.5rem;
-    padding-bottom: 1rem; }
-  [property="flashcard"][mv-mode="edit"] [property="source"],
-  [property="flashcard"][mv-mode="edit"] [property="example"] {
-    margin-bottom: 0; }
+      [property="flashcard"][mv-mode="edit"] details button:last-of-type {
+        display: block;
+        margin: 1rem auto;
+        width: 90%;
+        border-radius: initial; }
+    [property="flashcard"][mv-mode="edit"] details:first-of-type {
+      padding: 0.7rem 0; }
+    [property="flashcard"][mv-mode="edit"] details:last-of-type {
+      padding-top: 0.5rem;
+      padding-bottom: 1rem; }
+  [property="flashcard"][mv-mode="edit"] [property="translation"] {
+    margin-top: 3rem; }
+  [property="flashcard"][mv-mode="edit"] meta {
+    display: none; }
 
 [property="flashcard"]:not([mv-mode="edit"]) details {
   display: none; }
