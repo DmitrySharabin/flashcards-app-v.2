@@ -24,10 +24,24 @@
 
         <h1>Flashcards</h1>
 
-        <aside property="settings">
-
+        <aside property="settings" class="mv-bar" mv-bar="edit import export">
             <meta property="characters" content="àâäçèéêëîïôùûüœ">
 
+            <button class="mv-edit">
+                <i class="fa fa-edit"></i>Edit Flashcards
+            </button>
+
+            <button class="mv-import">
+                <i class="fa fa-upload"></i>Import Flashcards
+            </button>
+
+            <button class="mv-export">
+                <i class="fa fa-download"></i>Export Flashcards
+            </button>
+
+            <button mv-if="count(flashcard) > 0" mv-action="delete(flashcard)">
+                <i class="fa fa-trash"></i>Delete Flashcards
+            </button>
         </aside>
 
     </header>
