@@ -79,6 +79,12 @@ footer {
         margin-left: 1rem;
     }
 
+    [class="mv-edit"]::before {
+        content: "\f040";
+        margin-right: 0.7rem;
+        font-family: 'FontAwesome';
+    }
+
     [property="characters"] {
         border: none !important;
         padding: 0 !important;
