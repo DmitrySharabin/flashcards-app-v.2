@@ -34,12 +34,13 @@
 
     <main>
 
-        <article mv-multiple="flashcard">
+        <article mv-multiple="flashcard"
+                 data-uppercase-letter="{ uppercase(source[0]) }"
+                 data-lowercase-letter="{ lowercase(source[0]) }"
+                 data-bgc-index="{ $index mod 5 + 1 }"
+                 mv-expressions="{ }">
 
-            <span mv-value="uppercase(source[0])" mv-default></span>
-            <span mv-value="lowercase(source[0])" mv-default></span>
-
-            <p property="source"></p>
+            <p property="source" aria-label="Word or Phrase" mv-edit-placeholder=""></p>
             <details>
                 <summary>Special Characters</summary>
                 <button mv-multiple="character"
@@ -48,9 +49,9 @@
                         mv-attribute="none"></button>
             </details>
 
-            <p property="translation"></p>
+            <p property="translation" mv-edit-placeholder=""></p>
 
-            <p property="example"></p>
+            <p property="example" mv-edit-placeholder=""></p>
             <details>
                 <summary>Special Characters</summary>
                 <button mv-multiple

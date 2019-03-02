@@ -1,12 +1,104 @@
-/* Basic Styling */
+@import url("https://fonts.googleapis.com/css?family=Marck+Script");
 html {
   padding: 0;
-  margin: 0; }
+  margin: 0;
+  font-size: 62.5%; }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  min-width: 32rem;
+  padding: 0;
+  margin: 0;
+  background-color: #e6e6e6;
+  font-size: 2rem; }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit; }
+
+:root {
+  --circle-r: 15rem;
+  --bg-accent-1: hsl(150, 100%, 35%);
+  --bg-accent-2: hsl(345, 85%, 44%);
+  --bg-accent-3: hsl(204, 100%, 40%);
+  --bg-accent-4: hsl(300, 100%, 25%);
+  --bg-accent-5: hsl(176, 42%, 33%);
+  --bg-circle-color: hsl(14, 20%, 25%);
+  --flashcard-bg-color: hsl(56, 100%, 97%);
+  --text-color: black; }
+
+header h1,
+footer {
+  margin: 0;
+  padding: 1rem 2rem;
+  color: white;
+  background-color: var(--bg-circle-color); }
+
+main {
+  margin: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 2rem 1rem;
+  justify-items: center; }
+
+footer {
+  padding: 2rem;
+  text-align: center; }
+  footer * {
+    color: currentColor; }
+
+[property="flashcard"] {
+  position: relative;
+  width: 30rem;
+  padding: 3rem;
+  padding-top: calc(var(--circle-r) * 1.5);
+  border-radius: 4rem;
+  background-color: var(--flashcard-bg-color);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+  color: var(--text-color); }
+  [property="flashcard"]::before, [property="flashcard"]::after {
+    display: block;
+    position: absolute;
+    width: var(--circle-r);
+    height: var(--circle-r);
+    text-align: center;
+    font-size: calc(var(--circle-r) / 1.5);
+    border-radius: 50%;
+    top: calc(var(--circle-r) / 3.5); }
+  [property="flashcard"]::before {
+    content: attr(data-uppercase-letter);
+    line-height: var(--circle-r);
+    color: white;
+    background-color: #4d3933;
+    mix-blend-mode: multiply;
+    z-index: 1;
+    left: calc(15rem - var(--circle-r) / 2 - 1.8rem);
+    margin: 0 auto; }
+  [property="flashcard"]::after {
+    content: attr(data-lowercase-letter);
+    color: #e6e6e6;
+    opacity: 0.8;
+    top: 2.5rem;
+    left: calc(15rem - var(--circle-r) / 2 + 1.8rem);
+    margin: 0 auto; }
+  [property="flashcard"][data-bgc-index="1"]::after {
+    background-color: var(--bg-accent-1); }
+  [property="flashcard"][data-bgc-index="2"]::after {
+    background-color: var(--bg-accent-2); }
+  [property="flashcard"][data-bgc-index="3"]::after {
+    background-color: var(--bg-accent-3); }
+  [property="flashcard"][data-bgc-index="4"]::after {
+    background-color: var(--bg-accent-4); }
+  [property="flashcard"][data-bgc-index="5"]::after {
+    background-color: var(--bg-accent-5); }
+  [property="flashcard"] > p {
+    position: relative; }
+    [property="flashcard"] > p::before {
+      content: attr(aria-label);
+      position: absolute;
+      top: -2rem;
+      font-family: 'Marck Script', cursive; }
+
+[property="flashcard"]:not([mv-mode="edit"]) details {
+  display: none; }
