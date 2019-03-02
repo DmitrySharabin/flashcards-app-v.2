@@ -63,11 +63,13 @@ footer {
         background: none;
         border: none;
         color: white;
+        cursor: pointer;
     }
 
     summary {
         margin: 1.2rem 0;
         font-size: 3rem;
+        cursor: default;
     }
 
     .fa {

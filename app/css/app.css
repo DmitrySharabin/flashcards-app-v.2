@@ -48,11 +48,13 @@ footer {
   font-weight: 100;
   background: none;
   border: none;
-  color: white; }
+  color: white;
+  cursor: pointer; }
 
 [property="settings"] summary {
   margin: 1.2rem 0;
-  font-size: 3rem; }
+  font-size: 3rem;
+  cursor: default; }
 
 [property="settings"] .fa {
   margin-right: 1rem; }
