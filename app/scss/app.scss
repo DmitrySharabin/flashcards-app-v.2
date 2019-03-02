@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Marck+Script');
+@import url('https://fonts.googleapis.com/css?family=Courgette');
 @import url('https://fonts.googleapis.com/css?family=Arya');
 
 // Basic Styling
@@ -26,6 +26,10 @@ body {
 :root {
     --circle-r: 15rem;
 
+    // Fonts
+    --label-font: 'Courgette', cursive;
+    --main-font: 'Arya', sans-serif;
+
     // Color palette from https://www.color-hex.com/
     --bg-accent-1: hsl(150, 100%, 35%);
     --bg-accent-2: hsl(345, 85%, 44%);
@@ -40,13 +44,58 @@ body {
     --label-color: hsl(42, 71%, 33%);
 }
 
-header h1,
+header,
 footer {
     margin: 0;
     padding: 1rem 2rem;
     color: white;
     background-color: var(--bg-circle-color);
+    font-weight: lighter;
+    font-family: system-ui;
 }
+
+[property="settings"] {
+    >*, [class="mv-export"] {
+        margin: 0.3rem;
+        line-height: 2rem;
+        font-size: 2rem;
+        font-weight: 100;
+        background: none;
+        border: none;
+        color: white;
+    }
+
+    summary {
+        margin: 1.2rem 0;
+        font-size: 3rem;
+    }
+
+    .fa {
+        margin-right: 1rem;
+    }
+
+    .fa-font {
+        margin: 0;
+        margin-left: 1rem;
+    }
+
+    [property="characters"] {
+        border: none !important;
+        padding: 0 !important;
+
+        &::before {
+            content: attr(aria-label) !important;
+            color: white;
+            font-weight: 100;
+            font-family: system-ui;
+        }
+    }
+
+    &:not([mv-mode="edit"]) [class*="fa-font"] {
+        display: none;
+    }
+}
+
 
 main {
     margin: 2rem 1rem;
@@ -122,7 +171,7 @@ footer {
     >p {
         position: relative;
         padding-top: 0.2rem;
-        font-family: 'Arya', sans-serif;
+        font-family: var(--main-font);
         font-size: 2.5rem;
         line-height: 2.5rem;
         font-weight: 400;
@@ -134,15 +183,15 @@ footer {
             position: absolute;
             top: -2.2rem;
             color: var(--label-color);
-            font-family: 'Marck Script', cursive;
+            font-family: var(--label-font);
             font-size: 1.6rem;
         }
     }
 
     [property="source"] {
         margin-bottom: 4rem;
-        font-size: 3rem;
-        line-height: 3rem;
+        font-size: 3.5rem;
+        line-height: 3.5rem;
     }
 
     [property="translation"] {
@@ -166,7 +215,7 @@ footer {
 
         details {
             margin: 0;
-            font-family: 'Marck Script', cursive;
+            font-family: var(--label-font);
             font-size: 1.6rem;
             text-align: center;
 
@@ -182,7 +231,7 @@ footer {
                 margin: 0.3rem;
                 padding: 0.1rem;
                 color: var(--label-color);
-                font-family: 'Arya', cursive;
+                font-family: var(--main-font);
                 font-size: 1.7rem;
                 line-height: 1.7rem;
                 border-radius: 50%;
@@ -191,7 +240,7 @@ footer {
                 transition: all 0.2s ease-out;
 
                 &:hover,
-                .on {
+                &.on {
                     background-color: var(--label-color);
                     color: var(--flashcard-bg-color);
                     border-color: var(--flashcard-bg-color);
@@ -225,9 +274,29 @@ footer {
     }
 }
 
+/* Hide text on narrow screens */
+@media screen and (max-width: 425px) {
+    .hide {
+        display: none;
+    }
+
+    [property="characters"][mv-mode="edit"]::before {
+        content: "A" !important;
+        font-weight: 300;
+        font-family: inherit;
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+    }
+}
+
 [property="flashcard"]:not([mv-mode="edit"]) {
     // Make special characters visible only in the edit mode
     details {
         display: none;
     }
+}
+
+// Hide everything while the app is being loaded
+[mv-progress="Loading"] > * {
+    visibility: hidden;
 }

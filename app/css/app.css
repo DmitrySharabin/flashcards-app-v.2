@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Marck+Script");
+@import url("https://fonts.googleapis.com/css?family=Courgette");
 @import url("https://fonts.googleapis.com/css?family=Arya");
 html {
   padding: 0;
@@ -20,6 +20,8 @@ body {
 
 :root {
   --circle-r: 15rem;
+  --label-font: 'Courgette', cursive;
+  --main-font: 'Arya', sans-serif;
   --bg-accent-1: hsl(150, 100%, 35%);
   --bg-accent-2: hsl(345, 85%, 44%);
   --bg-accent-3: hsl(204, 100%, 40%);
@@ -30,12 +32,46 @@ body {
   --text-color: hsl(42, 71%, 44%);
   --label-color: hsl(42, 71%, 33%); }
 
-header h1,
+header,
 footer {
   margin: 0;
   padding: 1rem 2rem;
   color: white;
-  background-color: var(--bg-circle-color); }
+  background-color: var(--bg-circle-color);
+  font-weight: lighter;
+  font-family: system-ui; }
+
+[property="settings"] > *, [property="settings"] [class="mv-export"] {
+  margin: 0.3rem;
+  line-height: 2rem;
+  font-size: 2rem;
+  font-weight: 100;
+  background: none;
+  border: none;
+  color: white; }
+
+[property="settings"] summary {
+  margin: 1.2rem 0;
+  font-size: 3rem; }
+
+[property="settings"] .fa {
+  margin-right: 1rem; }
+
+[property="settings"] .fa-font {
+  margin: 0;
+  margin-left: 1rem; }
+
+[property="settings"] [property="characters"] {
+  border: none !important;
+  padding: 0 !important; }
+  [property="settings"] [property="characters"]::before {
+    content: attr(aria-label) !important;
+    color: white;
+    font-weight: 100;
+    font-family: system-ui; }
+
+[property="settings"]:not([mv-mode="edit"]) [class*="fa-font"] {
+  display: none; }
 
 main {
   margin: 2rem 1rem;
@@ -100,7 +136,7 @@ footer {
   [property="flashcard"] > p {
     position: relative;
     padding-top: 0.2rem;
-    font-family: 'Arya', sans-serif;
+    font-family: var(--main-font);
     font-size: 2.5rem;
     line-height: 2.5rem;
     font-weight: 400;
@@ -111,12 +147,12 @@ footer {
       position: absolute;
       top: -2.2rem;
       color: var(--label-color);
-      font-family: 'Marck Script', cursive;
+      font-family: var(--label-font);
       font-size: 1.6rem; }
   [property="flashcard"] [property="source"] {
     margin-bottom: 4rem;
-    font-size: 3rem;
-    line-height: 3rem; }
+    font-size: 3.5rem;
+    line-height: 3.5rem; }
   [property="flashcard"] [property="translation"] {
     padding-bottom: 2.5rem;
     background-image: radial-gradient(at 50% 100%, var(--text-color), transparent 70%);
@@ -131,7 +167,7 @@ footer {
     margin-bottom: 0; }
   [property="flashcard"][mv-mode="edit"] details {
     margin: 0;
-    font-family: 'Marck Script', cursive;
+    font-family: var(--label-font);
     font-size: 1.6rem;
     text-align: center; }
     [property="flashcard"][mv-mode="edit"] details summary {
@@ -144,15 +180,14 @@ footer {
       margin: 0.3rem;
       padding: 0.1rem;
       color: var(--label-color);
-      font-family: 'Arya', cursive;
+      font-family: var(--main-font);
       font-size: 1.7rem;
       line-height: 1.7rem;
       border-radius: 50%;
       background-color: var(--flashcard-bg-color);
       border-color: var(--text-color);
       transition: all 0.2s ease-out; }
-      [property="flashcard"][mv-mode="edit"] details button:hover,
-      [property="flashcard"][mv-mode="edit"] details button .on {
+      [property="flashcard"][mv-mode="edit"] details button:hover, [property="flashcard"][mv-mode="edit"] details button.on {
         background-color: var(--label-color);
         color: var(--flashcard-bg-color);
         border-color: var(--flashcard-bg-color); }
@@ -171,5 +206,19 @@ footer {
   [property="flashcard"][mv-mode="edit"] meta {
     display: none; }
 
+/* Hide text on narrow screens */
+@media screen and (max-width: 425px) {
+  .hide {
+    display: none; }
+  [property="characters"][mv-mode="edit"]::before {
+    content: "A" !important;
+    font-weight: 300;
+    font-family: inherit;
+    font-size: 2.2rem;
+    line-height: 2.2rem; } }
+
 [property="flashcard"]:not([mv-mode="edit"]) details {
   display: none; }
+
+[mv-progress="Loading"] > * {
+  visibility: hidden; }

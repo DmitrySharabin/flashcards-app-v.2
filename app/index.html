@@ -19,35 +19,32 @@
 </head>
 
 <body mv-app="flashcards" mv-storage="local" mv-init="example.json">
-
     <header>
+        <details property="settings" class="mv-bar" mv-bar="edit import export">
+            <summary>Flashcards</summary>
 
-        <h1>Flashcards</h1>
-
-        <aside property="settings" class="mv-bar" mv-bar="edit import export">
+            <i class="fa fa-font hide"></i>
             <meta property="characters" content="àâäçèéêëîïôùûüœ">
 
             <button class="mv-edit">
-                <i class="fa fa-edit"></i>Edit Flashcards
+                <i class="fa fa-pencil"></i><span class="hide">Edit</span>
             </button>
 
             <button class="mv-import">
-                <i class="fa fa-upload"></i>Import Flashcards
+                <i class="fa fa-upload"></i><span class="hide">Import</span>
             </button>
 
-            <button class="mv-export">
-                <i class="fa fa-download"></i>Export Flashcards
+            <button mv-if="count(flashcard) > 0" class="mv-export">
+                <i class="fa fa-download"></i><span class="hide">Export</span>
             </button>
 
             <button mv-if="count(flashcard) > 0" mv-action="delete(flashcard)">
-                <i class="fa fa-trash"></i>Delete Flashcards
+                <i class="fa fa-trash"></i><span class="hide">Delete</span>
             </button>
-        </aside>
-
+        </details>
     </header>
 
     <main>
-
         <article mv-multiple="flashcard"
                  data-uppercase-letter="{ uppercase(source[0]) }"
                  data-lowercase-letter="{ lowercase(source[0]) }"
@@ -84,7 +81,6 @@
                         class="[if(shift, on)]">⇪ Shift</button>
             </details>
         </article>
-
     </main>
 
     <footer>
@@ -93,7 +89,6 @@
         using <a href="https://mavo.io" target="_blank">Mavo</a>.
 
     </footer>
-
 </body>
 
 </html>
