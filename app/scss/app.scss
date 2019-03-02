@@ -313,6 +313,10 @@ footer {
     }
 }
 
+.mv-popup {
+    font-family: var(--main-font) !important;
+}
+
 /* Hide text on narrow screens */
 @media screen and (max-width: 425px) {
     .hide {
