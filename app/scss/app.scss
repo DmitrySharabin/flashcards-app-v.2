@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
+@import url('https://fonts.googleapis.com/css?family=Arya');
 
 // Basic Styling
 html {
@@ -35,7 +36,8 @@ body {
     --bg-circle-color: hsl(14, 20%, 25%);
 
     --flashcard-bg-color: hsl(56, 100%, 97%);
-    --text-color: black;
+    --text-color: hsl(42, 71%, 44%);
+    --label-color: hsl(42, 71%, 33%);
 }
 
 header h1,
@@ -50,7 +52,7 @@ main {
     margin: 2rem 1rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    grid-gap: 2rem 1rem;
+    grid-gap: 2rem;
     justify-items: center;
 }
 
@@ -67,17 +69,23 @@ footer {
     position: relative;
     width: 30rem;
     padding: 3rem;
-    padding-top: calc(var(--circle-r) * 1.5);
+    padding-top: calc(var(--circle-r) * 1.45);
+    color: var(--text-color);
     border-radius: 4rem;
     background-color: var(--flashcard-bg-color);
-    // Inner shadow is taken from https://mavo.io/demos/todo/
-    box-shadow: 0 3px 1px -2px hsla(0, 0%, 0%, 0.2), 0 2px 2px 0 hsla(0, 0%, 0%, 0.14), 0 1px 5px 0 hsla(0, 0%, 0%, 0.12),
-                2px 3px 20px black, 0 0 60px hsl(30, 80%, 30%) inset;
-    color: var(--text-color);
+
+    // The shadow is taken from https://mavo.io/demos/todo/
+    box-shadow: 2px 3px 20px black, 0 0 60px hsl(30, 80%, 30%) inset;
+
+    background-image: radial-gradient(at 50% 0, var(--text-color), transparent 60%);
+    background-position-y: calc(var(--circle-r) * 1.4);
+    background-size: 100% 0.25rem;
+    background-repeat: no-repeat;
 
     &::before, &::after {
         display: block;
         position: absolute;
+        margin: 0 auto;
         width: var(--circle-r);
         height: var(--circle-r);
         text-align: center;
@@ -94,7 +102,6 @@ footer {
         mix-blend-mode: multiply;
         z-index: 1;
         left: calc(15rem - var(--circle-r) / 2 - 1.8rem);
-        margin: 0 auto;
     }
 
     &::after {
@@ -103,7 +110,6 @@ footer {
         opacity: 0.8;
         top: 2.5rem;
         left: calc(15rem - var(--circle-r) / 2 + 1.8rem);
-        margin: 0 auto;
     }
 
     // Prepare styles for bg circles
@@ -115,12 +121,91 @@ footer {
 
     >p {
         position: relative;
+        padding-top: 0.2rem;
+        font-family: 'Arya', sans-serif;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        font-weight: 400;
+        min-width: 100%;
+        cursor: default;
 
         &::before {
             content: attr(aria-label);
             position: absolute;
-            top: -2rem;
+            top: -2.2rem;
+            color: var(--label-color);
             font-family: 'Marck Script', cursive;
+            font-size: 1.6rem;
+        }
+    }
+
+    [property="source"] {
+        margin-bottom: 4rem;
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    [property="translation"] {
+        padding-bottom: 2.5rem;
+        background-image: radial-gradient(at 50% 100%, var(--text-color), transparent 85%);
+        background-position: bottom;
+        background-size: 100% 0.25rem;
+        background-repeat: no-repeat;
+    }
+
+    [property="example"] {
+        margin-top: 3.2rem;
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+    }
+
+    &[mv-mode="edit"] {
+        details {
+            margin: 0;
+            font-family: 'Marck Script', cursive;
+            font-size: 1.6rem;
+            text-align: center;
+
+            summary {
+                text-align: left;
+                margin-bottom: 0.7rem;
+                cursor: default;
+            }
+
+            button {
+                width: 3.5rem;
+                height: 3.5rem;
+                margin: 0.3rem;
+                padding: 0.1rem;
+                color: var(--label-color);
+                font-family: 'Arya', cursive;
+                font-size: 1.7rem;
+                line-height: 1.7rem;
+                border-radius: 50%;
+                background-color: var(--flashcard-bg-color);
+                border-color: var(--text-color);
+                transition: all 0.2s ease-out;
+
+                &:hover {
+                    background-color: var(--label-color);
+                    color: var(--flashcard-bg-color);
+                    border-color: var(--flashcard-bg-color);
+                }
+            }
+        }
+
+        details:first-of-type {
+            padding-bottom: 1.2rem;
+        }
+
+        details:last-of-type {
+            padding-top: 0.5rem;
+            padding-bottom: 1rem;
+        }
+
+        [property="source"],
+        [property="example"] {
+            margin-bottom: 0;
         }
     }
 }

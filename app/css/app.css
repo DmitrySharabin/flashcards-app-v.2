@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Marck+Script");
+@import url("https://fonts.googleapis.com/css?family=Arya");
 html {
   padding: 0;
   margin: 0;
@@ -26,7 +27,8 @@ body {
   --bg-accent-5: hsl(176, 42%, 33%);
   --bg-circle-color: hsl(14, 20%, 25%);
   --flashcard-bg-color: hsl(56, 100%, 97%);
-  --text-color: black; }
+  --text-color: hsl(42, 71%, 44%);
+  --label-color: hsl(42, 71%, 33%); }
 
 header h1,
 footer {
@@ -39,7 +41,7 @@ main {
   margin: 2rem 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  grid-gap: 2rem 1rem;
+  grid-gap: 2rem;
   justify-items: center; }
 
 footer {
@@ -52,14 +54,19 @@ footer {
   position: relative;
   width: 30rem;
   padding: 3rem;
-  padding-top: calc(var(--circle-r) * 1.5);
+  padding-top: calc(var(--circle-r) * 1.45);
+  color: var(--text-color);
   border-radius: 4rem;
   background-color: var(--flashcard-bg-color);
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 2px 3px 20px black, 0 0 60px #8a4d0f inset;
-  color: var(--text-color); }
+  box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+  background-image: radial-gradient(at 50% 0, var(--text-color), transparent 60%);
+  background-position-y: calc(var(--circle-r) * 1.4);
+  background-size: 100% 0.25rem;
+  background-repeat: no-repeat; }
   [property="flashcard"]::before, [property="flashcard"]::after {
     display: block;
     position: absolute;
+    margin: 0 auto;
     width: var(--circle-r);
     height: var(--circle-r);
     text-align: center;
@@ -73,15 +80,13 @@ footer {
     background-color: #4d3933;
     mix-blend-mode: multiply;
     z-index: 1;
-    left: calc(15rem - var(--circle-r) / 2 - 1.8rem);
-    margin: 0 auto; }
+    left: calc(15rem - var(--circle-r) / 2 - 1.8rem); }
   [property="flashcard"]::after {
     content: attr(data-lowercase-letter);
     color: #e6e6e6;
     opacity: 0.8;
     top: 2.5rem;
-    left: calc(15rem - var(--circle-r) / 2 + 1.8rem);
-    margin: 0 auto; }
+    left: calc(15rem - var(--circle-r) / 2 + 1.8rem); }
   [property="flashcard"][data-bgc-index="1"]::after {
     background-color: var(--bg-accent-1); }
   [property="flashcard"][data-bgc-index="2"]::after {
@@ -93,12 +98,69 @@ footer {
   [property="flashcard"][data-bgc-index="5"]::after {
     background-color: var(--bg-accent-5); }
   [property="flashcard"] > p {
-    position: relative; }
+    position: relative;
+    padding-top: 0.2rem;
+    font-family: 'Arya', sans-serif;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    min-width: 100%;
+    cursor: default; }
     [property="flashcard"] > p::before {
       content: attr(aria-label);
       position: absolute;
-      top: -2rem;
-      font-family: 'Marck Script', cursive; }
+      top: -2.2rem;
+      color: var(--label-color);
+      font-family: 'Marck Script', cursive;
+      font-size: 1.6rem; }
+  [property="flashcard"] [property="source"] {
+    margin-bottom: 4rem;
+    font-size: 3rem;
+    line-height: 3rem; }
+  [property="flashcard"] [property="translation"] {
+    padding-bottom: 2.5rem;
+    background-image: radial-gradient(at 50% 100%, var(--text-color), transparent 85%);
+    background-position: bottom;
+    background-size: 100% 0.25rem;
+    background-repeat: no-repeat; }
+  [property="flashcard"] [property="example"] {
+    margin-top: 3.2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem; }
+  [property="flashcard"][mv-mode="edit"] details {
+    margin: 0;
+    font-family: 'Marck Script', cursive;
+    font-size: 1.6rem;
+    text-align: center; }
+    [property="flashcard"][mv-mode="edit"] details summary {
+      text-align: left;
+      margin-bottom: 0.7rem;
+      cursor: default; }
+    [property="flashcard"][mv-mode="edit"] details button {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin: 0.3rem;
+      padding: 0.1rem;
+      color: var(--label-color);
+      font-family: 'Arya', cursive;
+      font-size: 1.7rem;
+      line-height: 1.7rem;
+      border-radius: 50%;
+      background-color: var(--flashcard-bg-color);
+      border-color: var(--text-color);
+      transition: all 0.2s ease-out; }
+      [property="flashcard"][mv-mode="edit"] details button:hover {
+        background-color: var(--label-color);
+        color: var(--flashcard-bg-color);
+        border-color: var(--flashcard-bg-color); }
+  [property="flashcard"][mv-mode="edit"] details:first-of-type {
+    padding-bottom: 1.2rem; }
+  [property="flashcard"][mv-mode="edit"] details:last-of-type {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem; }
+  [property="flashcard"][mv-mode="edit"] [property="source"],
+  [property="flashcard"][mv-mode="edit"] [property="example"] {
+    margin-bottom: 0; }
 
 [property="flashcard"]:not([mv-mode="edit"]) details {
   display: none; }
