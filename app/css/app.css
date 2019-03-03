@@ -218,7 +218,7 @@ footer {
       line-height: 1.7rem;
       border-radius: 50%;
       background-color: var(--flashcard-bg-color);
-      border-color: var(--text-color);
+      border: 1px solid var(--text-color);
       transition: all 0.2s ease-out; }
       [property="flashcard"][mv-mode="edit"] details button:hover, [property="flashcard"][mv-mode="edit"] details button.on {
         background-color: var(--label-color);
