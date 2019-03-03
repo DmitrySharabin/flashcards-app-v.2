@@ -55,15 +55,15 @@
             <details mv-if="len(characters) > 0">
                 <summary>Special Characters</summary>
 
-                <meta property="shift" content="false" mv-storage="none">
+                <meta property="capslock" content="false" mv-storage="none">
 
                 <button mv-multiple="character"
-                        mv-value="if(shift, split(uppercase(characters), ''), split(characters, ''))"
+                        mv-value="if(capslock, split(uppercase(characters), ''), split(characters, ''))"
                         mv-action="set(source, source & character)"
                         mv-attribute="none"></button>
 
-                <button mv-action="set(shift, !shift)"
-                        class="[if(shift, on)]">⇪ Shift</button>
+                <button mv-action="set(capslock, !capslock)"
+                        class="[if(capslock, on)]">⇪ Caps Lock</button>
             </details>
 
             <p property="translation"></p>
@@ -77,8 +77,8 @@
         				mv-action="set(example, example & character[$index])"
                         mv-attribute="none"></button>
 
-                <button mv-action="set(shift, !shift)"
-                        class="[if(shift, on)]">⇪ Shift</button>
+                <button mv-action="set(capslock, !capslock)"
+                        class="[if(capslock, on)]">⇪ Caps Lock</button>
             </details>
         </article>
     </main>
