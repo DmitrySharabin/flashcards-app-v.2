@@ -103,7 +103,7 @@ footer {
   border: none;
   border-radius: 2.25rem;
   background-color: var(--flashcard-bg-color);
-  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.5);
   cursor: pointer; }
   [class*="mv-add-flashcard"]:hover {
     width: min-content; }
@@ -126,12 +126,12 @@ footer {
 [property="flashcard"] {
   position: relative;
   width: 30rem;
-  padding: 3rem;
+  padding: 3.5rem;
   padding-top: calc(var(--circle-r) * 1.45);
   color: var(--text-color);
   border-radius: 4rem;
   background-color: var(--flashcard-bg-color);
-  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.9), 0 0 60px #8a4d0f inset;
+  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.7), 0 0 60px #8a4d0f inset;
   background-image: radial-gradient(at 50% 0, var(--text-color), transparent 60%);
   background-position-y: calc(var(--circle-r) * 1.4);
   background-size: 100% 0.25rem;
