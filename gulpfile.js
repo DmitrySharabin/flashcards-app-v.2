@@ -29,7 +29,7 @@ function buildSass() {
 
 function copyFiles() {
     return src(['app/**/*.json', 'app/index.html'])
-        .pipe(dest('dist/'));
+        .pipe(dest('dist'));
 
 }
 
