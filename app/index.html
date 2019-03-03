@@ -18,30 +18,32 @@
     <title>Flashcards</title>
 </head>
 
-<body mv-app="flashcards" mv-storage="local" mv-autosave mv-init="example.json">
+<body mv-app="flashcards" mv-storage="local" mv-init="example.json" mv-plugins="locale-ru" mv-autosave>
     <header>
         <details property="settings" class="mv-bar" mv-bar="edit import export">
-            <summary>Flashcards</summary>
+            <meta property="language" content="en" mv-edit="#languages">
+
+            <summary>[phrase("app", language)]</summary>
 
             <i class="fa fa-font hide"></i>
             <meta property="characters" content="àâäçèéêëîïôùûüœ">
 
             <button class="mv-import">
-                <i class="fa fa-upload"></i><span class="hide">Import</span>
+                <i class="fa fa-upload"></i><span class="hide">[phrase("import", language)]</span>
             </button>
 
             <button mv-if="count(flashcard) > 0" class="mv-export">
-                <i class="fa fa-download"></i><span class="hide">Export</span>
+                <i class="fa fa-download"></i><span class="hide">[phrase("export", language)]</span>
             </button>
 
             <button mv-if="count(flashcard) > 0" mv-action="delete(flashcard)">
-                <i class="fa fa-trash"></i><span class="hide">Delete</span>
+                <i class="fa fa-trash"></i><span class="hide">[phrase("delete", language)]</span>
             </button>
         </details>
     </header>
 
-    <button class="mv-add-flashcard" title="Add flashcard">
-        <i class="fa fa-plus"></i>Add flashcard
+    <button class="mv-add-flashcard">
+        <i class="fa fa-plus"></i>[phrase("add-item", group(name: phrase("item-name", language)), language)]
     </button>
 
     <main>
@@ -51,9 +53,9 @@
                  data-bgc-index="{ $index mod 5 + 1 }"
                  mv-expressions="{ }">
 
-            <p property="source" aria-label="Word or Phrase"></p>
+            <p property="source" aria-label="[phrase('source', language)]"></p>
             <details mv-if="len(characters) > 0">
-                <summary>Special Characters</summary>
+                <summary>[phrase("characters", language)]</summary>
 
                 <meta property="capslock" content="false" mv-storage="none">
 
@@ -66,11 +68,11 @@
                         class="[if(capslock, on)]">⇪ Caps Lock</button>
             </details>
 
-            <p property="translation"></p>
+            <p property="translation" aria-label="[phrase('translation', language)]"></p>
 
-            <p property="example"></p>
+            <p property="example" aria-label="[phrase('example', language)]"></p>
             <details mv-if="len(characters) > 0">
-                <summary>Special Characters</summary>
+                <summary>[phrase("characters", language)]</summary>
 
                 <button mv-multiple
         				mv-value="character"
@@ -89,6 +91,42 @@
         using <a href="https://mavo.io" target="_blank">Mavo</a>.
 
     </footer>
+
+    <!-- Available languages -->
+
+    <div hidden>
+        <select id="languages">
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+        </select>
+    </div>
+
+    <!-- Localization Phrases -->
+
+    <datalist class="mv-phrases" lang="en">
+        <option value="app">Flashcards</option>
+        <!-- Headers -->
+        <option value="source">Word or phrase</option>
+        <option value="characters">Special Characters</option>
+        <option value="translation">Translation</option>
+        <option value="example">Example</option>
+        <!-- Buttons -->
+        <option value="delete">Reset</option>
+    </datalist>
+
+    <datalist class="mv-phrases" lang="ru">
+        <option value="app">Карточки</option>
+        <option value="item-name">карточку</option>
+        <!-- Headers -->
+        <option value="source">Слово или фраза</option>
+        <option value="characters">Специальные символы</option>
+        <option value="translation">Перевод</option>
+        <option value="example">Пример</option>
+        <!-- Buttons -->
+        <option value="import">Загрузить</option>
+        <option value="export">Сохранить</option>
+        <option value="delete">Удалить</option>
+    </datalist>
 </body>
 
 </html>
