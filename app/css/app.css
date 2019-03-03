@@ -255,7 +255,7 @@ footer {
     line-height: 2.2rem; }
   [class="mv-edit"] {
     overflow: hidden;
-    width: 1.8rem;
+    width: 1ch;
     margin-right: 1rem; } }
 
 [property="flashcard"]:not([mv-mode="edit"]) details {
