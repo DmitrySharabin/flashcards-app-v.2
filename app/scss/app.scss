@@ -112,6 +112,7 @@ footer {
     width: 4.5rem;
     height: 4.5rem;
     margin: 1rem 2rem 0;
+    margin-right: auto;
     padding: 1.35rem;
     padding-top: 1.2rem;
     text-align: left;
@@ -125,10 +126,9 @@ footer {
     background-color: var(--flashcard-bg-color);
     box-shadow: 2px 3px 20px hsla(0, 0%, 0%, 0.7);
     cursor: pointer;
-    transition: width 0.2s ease-in-out;
 
     &:hover {
-        width: 19rem;
+        width: min-content;
     }
 
     .fa {

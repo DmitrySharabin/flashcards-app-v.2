@@ -87,6 +87,7 @@ footer {
   width: 4.5rem;
   height: 4.5rem;
   margin: 1rem 2rem 0;
+  margin-right: auto;
   padding: 1.35rem;
   padding-top: 1.2rem;
   text-align: left;
@@ -99,10 +100,9 @@ footer {
   border-radius: 2.25rem;
   background-color: var(--flashcard-bg-color);
   box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.7);
-  cursor: pointer;
-  transition: width 0.2s ease-in-out; }
+  cursor: pointer; }
   [class*="mv-add-flashcard"]:hover {
-    width: 19rem; }
+    width: min-content; }
   [class*="mv-add-flashcard"] .fa {
     margin-right: 1.25rem; }
 

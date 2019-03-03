@@ -1,8 +1,8 @@
 {
-    "settings": {
+	"settings": {
 		"characters": "àâäçèéêëîïôùûüœ"
 	},
-    "flashcard": [
+	"flashcard": [
 		{
 			"source": "Noël",
 			"translation": "Christmas",
