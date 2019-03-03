@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Courgette");
-@import url("https://fonts.googleapis.com/css?family=Arya");
+@import url("https://fonts.googleapis.com/css?family=Lobster&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=Oswald:300&subset=cyrillic");
 html {
   padding: 0;
   margin: 0;
@@ -24,8 +24,8 @@ body {
 
 :root {
   --circle-r: 15rem;
-  --label-font: 'Courgette', cursive;
-  --main-font: 'Arya', sans-serif;
+  --main-font: 'Oswald', sans-serif;
+  --label-font: 'Lobster', cursive;
   --bg-accent-1: hsl(150, 100%, 35%);
   --bg-accent-2: hsl(345, 85%, 44%);
   --bg-accent-3: hsl(204, 100%, 40%);
@@ -182,10 +182,11 @@ footer {
     [property="flashcard"] > p::before {
       content: attr(aria-label);
       position: absolute;
-      top: -2.2rem;
+      top: -2.3rem;
       color: var(--label-color);
       font-family: var(--label-font);
-      font-size: 1.6rem; }
+      font-size: 1.6rem;
+      opacity: 0.7; }
   [property="flashcard"] [property="source"] {
     margin-bottom: 4rem;
     font-size: 3.5rem;
@@ -199,7 +200,7 @@ footer {
   [property="flashcard"] [property="example"] {
     margin-top: 3.2rem;
     font-size: 1.8rem;
-    line-height: 1.8rem; }
+    line-height: 2.2rem; }
   [property="flashcard"][mv-mode="edit"] > p {
     margin-bottom: 0; }
   [property="flashcard"][mv-mode="edit"] details {
@@ -210,7 +211,8 @@ footer {
     [property="flashcard"][mv-mode="edit"] details summary {
       text-align: left;
       margin-bottom: 0.7rem;
-      cursor: default; }
+      cursor: default;
+      opacity: 0.9; }
     [property="flashcard"][mv-mode="edit"] details button {
       width: 3.5rem;
       height: 3.5rem;
