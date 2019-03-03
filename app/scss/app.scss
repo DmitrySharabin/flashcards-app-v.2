@@ -236,6 +236,10 @@ footer {
         margin-bottom: 4rem;
         font-size: 3.5rem;
         line-height: 3.5rem;
+
+        &::before {
+            top: -2.7rem;
+        }
     }
 
     [property="translation"] {

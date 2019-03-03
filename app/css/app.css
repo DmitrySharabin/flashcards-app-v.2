@@ -191,6 +191,8 @@ footer {
     margin-bottom: 4rem;
     font-size: 3.5rem;
     line-height: 3.5rem; }
+    [property="flashcard"] [property="source"]::before {
+      top: -2.7rem; }
   [property="flashcard"] [property="translation"] {
     padding-bottom: 2.5rem;
     background-image: radial-gradient(at 50% 100%, var(--text-color), transparent 70%);
