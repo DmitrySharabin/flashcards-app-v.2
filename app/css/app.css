@@ -253,7 +253,7 @@ footer {
   font-family: var(--main-font) !important; }
 
 /* Hide text on narrow screens */
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 455px) {
   .hide {
     display: none; }
   [property="characters"][mv-mode="edit"]::before {
