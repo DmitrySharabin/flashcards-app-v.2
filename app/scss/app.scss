@@ -202,12 +202,12 @@ footer {
     padding: 3.5rem;
     padding-top: calc(var(--circle-r) * 1.45);
     color: var(--text-color);
-    border-radius: 1.5rem;
+    border-radius: 2rem;
     background-color: var(--flashcard-bg-color);
     scroll-snap-align: start;
 
     // The shadow is taken from https://mavo.io/demos/todo/
-    box-shadow: 2px 3px 20px hsla(0, 0%, 0%, 0.7), 0 0 6rem hsl(30, 80%, 30%) inset;
+    box-shadow: 2px 3px 20px hsla(0, 0%, 0%, 0.7), 0 0 12rem hsl(30, 80%, 30%) inset;
 
     background-image: radial-gradient(at 50% 0, var(--text-color), transparent 60%);
     background-position-y: calc(var(--circle-r) * 1.4);
