@@ -23,10 +23,13 @@
         <details property="settings" class="mv-bar" mv-bar="edit import export">
             <summary>[phrase("app", language)]</summary>
 
-            <meta property="language" content="en" mv-edit="#languages">
+            <i class="fa fa-globe hide hide-icon"></i>
+            <meta property="language" content="en" mv-edit="#languages"
+                  aria-label="[phrase('lang', language)]">
 
-            <i class="fa fa-font hide"></i>
-            <meta property="characters" content="àâäçèéêëîïôùûüœ">
+            <i class="fa fa-font hide hide-icon"></i>
+            <meta property="characters" content="àâäçèéêëîïôùûüœ"
+                  aria-label="[if(language = ru, 'Символы', 'Characters')]">
 
             <button class="mv-edit">
                 <i class="fa fa-pencil"></i><span class="hide">Edit</span>
@@ -47,7 +50,7 @@
     </header>
 
     <button class="mv-add-flashcard">
-        <i class="fa fa-plus"></i>[phrase("add-item", group(name: phrase("name", language)), language)]
+        <i class="fa fa-plus"></i>[phrase("new", language)]
     </button>
 
     <main>
@@ -108,8 +111,8 @@
 
     <datalist class="mv-phrases" lang="en">
         <option value="app">Flashcards</option>
-        <option value="name">flashcard</option>
         <!-- Headers -->
+        <option value="lang">Language</option>
         <option value="source">Word or phrase</option>
         <option value="characters">Special Characters</option>
         <option value="translation">Translation</option>
@@ -118,12 +121,13 @@
         <option value="import">Upload</option>
         <option value="export">Download</option>
         <option value="delete">Delete</option>
+        <option value="new">Add flashcard</option>
     </datalist>
 
     <datalist class="mv-phrases" lang="ru">
         <option value="app">Карточки</option>
-        <option value="name">карточку</option>
         <!-- Headers -->
+        <option value="lang">Язык</option>
         <option value="source">Слово или фраза</option>
         <option value="characters">Специальные символы</option>
         <option value="translation">Перевод</option>
@@ -132,6 +136,7 @@
         <option value="import">Загрузить</option>
         <option value="export">Сохранить</option>
         <option value="delete">Удалить</option>
+        <option value="new">Создать карточку</option>
     </datalist>
 </body>
 

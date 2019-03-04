@@ -80,7 +80,8 @@ footer {
         margin-right: 1rem;
     }
 
-    .fa-font {
+    .fa-font,
+    .fa-globe {
         margin: 0;
         margin-left: 1rem;
     }
@@ -88,6 +89,11 @@ footer {
     [property="characters"] {
         border: none !important;
         padding: 0 !important;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: none !important;
+        }
 
         &::before {
             content: attr(aria-label) !important;
@@ -97,7 +103,24 @@ footer {
         }
     }
 
-    &:not([mv-mode="edit"]) [class*="fa-font"] {
+    [property="language"] {
+        border: none !important;
+        padding: 0 !important;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: none !important;
+        }
+
+        &::before {
+            content: attr(aria-label) !important;
+            color: white;
+            font-weight: 100;
+            font-family: system-ui;
+        }
+    }
+
+    &:not([mv-mode="edit"]) .hide-icon {
         display: none;
     }
 }
@@ -326,12 +349,17 @@ footer {
     }
 
     [property="characters"][mv-mode="edit"]::before {
-        content: "A" !important;
+        content: "\f031" !important;
+        font-family: 'FontAwesome';
+        -webkit-font-smoothing: antialiased;
         margin-right: 1rem;
-        font-weight: 300;
-        font-family: initial;
-        font-size: 2.2rem;
-        line-height: 2.2rem;
+    }
+
+    [property="language"][mv-mode="edit"]::before {
+        content: "\f0ac" !important;
+        font-family: 'FontAwesome';
+        -webkit-font-smoothing: antialiased;
+        margin-right: 1rem;
     }
 }
 

@@ -63,20 +63,36 @@ footer {
 [property="settings"] .fa {
   margin-right: 1rem; }
 
-[property="settings"] .fa-font {
+[property="settings"] .fa-font,
+[property="settings"] .fa-globe {
   margin: 0;
   margin-left: 1rem; }
 
 [property="settings"] [property="characters"] {
   border: none !important;
-  padding: 0 !important; }
+  padding: 0 !important;
+  cursor: pointer; }
+  [property="settings"] [property="characters"]:hover {
+    box-shadow: none !important; }
   [property="settings"] [property="characters"]::before {
     content: attr(aria-label) !important;
     color: white;
     font-weight: 100;
     font-family: system-ui; }
 
-[property="settings"]:not([mv-mode="edit"]) [class*="fa-font"] {
+[property="settings"] [property="language"] {
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer; }
+  [property="settings"] [property="language"]:hover {
+    box-shadow: none !important; }
+  [property="settings"] [property="language"]::before {
+    content: attr(aria-label) !important;
+    color: white;
+    font-weight: 100;
+    font-family: system-ui; }
+
+[property="settings"]:not([mv-mode="edit"]) .hide-icon {
   display: none; }
 
 [class*="mv-add-flashcard"] {
@@ -249,12 +265,15 @@ footer {
   .hide {
     display: none; }
   [property="characters"][mv-mode="edit"]::before {
-    content: "A" !important;
-    margin-right: 1rem;
-    font-weight: 300;
-    font-family: initial;
-    font-size: 2.2rem;
-    line-height: 2.2rem; } }
+    content: "\f031" !important;
+    font-family: 'FontAwesome';
+    -webkit-font-smoothing: antialiased;
+    margin-right: 1rem; }
+  [property="language"][mv-mode="edit"]::before {
+    content: "\f0ac" !important;
+    font-family: 'FontAwesome';
+    -webkit-font-smoothing: antialiased;
+    margin-right: 1rem; } }
 
 [property="flashcard"]:not([mv-mode="edit"]) details {
   display: none; }
