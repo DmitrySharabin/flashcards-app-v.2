@@ -45,4 +45,4 @@ function watchFiles(cb) {
 
 exports.build = series(clear, parallel(buildSass, copyFiles));
 
-exports.default = series(watchFiles, parallel(browserSyncTask, sassTask));
+exports.default = parallel(watchFiles, browserSyncTask, sassTask);
