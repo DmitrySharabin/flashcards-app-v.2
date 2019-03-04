@@ -136,6 +136,7 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 2rem;
     justify-items: center;
+    scroll-snap-type: y proximity;
 }
 
 footer {
@@ -155,6 +156,7 @@ footer {
     color: var(--text-color);
     border-radius: 4rem;
     background-color: var(--flashcard-bg-color);
+    scroll-snap-align: start;
 
     // The shadow is taken from https://mavo.io/demos/todo/
     box-shadow: 2px 3px 20px hsla(0, 0%, 0%, 0.7), 0 0 60px hsl(30, 80%, 30%) inset;

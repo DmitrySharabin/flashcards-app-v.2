@@ -107,7 +107,8 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 2rem;
-  justify-items: center; }
+  justify-items: center;
+  scroll-snap-type: y proximity; }
 
 footer {
   padding: 2rem;
@@ -123,6 +124,7 @@ footer {
   color: var(--text-color);
   border-radius: 4rem;
   background-color: var(--flashcard-bg-color);
+  scroll-snap-align: start;
   box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.7), 0 0 60px #8a4d0f inset;
   background-image: radial-gradient(at 50% 0, var(--text-color), transparent 60%);
   background-position-y: calc(var(--circle-r) * 1.4);
