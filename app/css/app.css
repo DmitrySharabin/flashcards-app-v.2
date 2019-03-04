@@ -67,6 +67,10 @@ footer {
   margin: 0;
   margin-left: 1rem; }
 
+[property="settings"] > section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, max-content)); }
+
 [property="settings"] [class="mv-edit"] {
   padding-left: 0; }
   [property="settings"] [class="mv-edit"]::before {
