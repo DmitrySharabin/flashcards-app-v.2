@@ -50,10 +50,9 @@
 
     <main>
         <article mv-multiple="flashcard"
-                 data-uppercase-letter="{ uppercase(source[0]) }"
-                 data-lowercase-letter="{ lowercase(source[0]) }"
-                 data-bgc-index="{ $index mod 5 + 1 }"
-                 mv-expressions="{ }">
+                 data-uppercase-letter="[uppercase(source.charAt(0))]"
+                 data-lowercase-letter="[lowercase(source.charAt(0))]"
+                 data-bgc-index="[$index mod 5 + 1]">
 
             <p property="source" aria-label="Word or Phrase"></p>
             <details mv-if="len(characters) > 0">
