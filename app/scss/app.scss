@@ -70,7 +70,6 @@ footer {
     }
 
     summary {
-        display: flex;
         margin: 0.5rem 0;
         font-size: 4rem;
         cursor: default;
@@ -80,10 +79,10 @@ footer {
         }
 
         &:after {
-            display: inline-block;
-            align-self: center;
-            margin-left: auto;
+            display: block;
             margin-right: 2.2rem;
+            margin-top: 1.2rem;
+            float: right;
             content: "\f142";
             font-family: 'FontAwesome';
             -webkit-font-smoothing: antialiased;
@@ -393,6 +392,7 @@ footer {
 
             &:after {
                 margin-right: 0.8rem;
+                margin-top: 0.6rem;
             }
         }
 

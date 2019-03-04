@@ -55,17 +55,16 @@ footer {
   cursor: pointer; }
 
 [property="settings"] summary {
-  display: flex;
   margin: 0.5rem 0;
   font-size: 4rem;
   cursor: default; }
   [property="settings"] summary::-webkit-details-marker {
     display: none; }
   [property="settings"] summary:after {
-    display: inline-block;
-    align-self: center;
-    margin-left: auto;
+    display: block;
     margin-right: 2.2rem;
+    margin-top: 1.2rem;
+    float: right;
     content: "\f142";
     font-family: 'FontAwesome';
     -webkit-font-smoothing: antialiased; }
@@ -293,7 +292,8 @@ footer {
   [property="settings"] summary {
     font-size: 2.5rem; }
     [property="settings"] summary:after {
-      margin-right: 0.8rem; }
+      margin-right: 0.8rem;
+      margin-top: 0.6rem; }
   [property="settings"][open] summary:after {
     margin-right: 0; }
   footer {
