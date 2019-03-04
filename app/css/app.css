@@ -42,11 +42,7 @@ footer {
   padding: 1rem 2rem;
   color: white;
   background-color: var(--bg-circle-color);
-  font-weight: lighter;
-  font-family: system-ui; }
-
-footer p {
-  margin: 0; }
+  font-family: var(--main-font); }
 
 [property="settings"] button {
   margin: 0.3rem;
@@ -59,9 +55,24 @@ footer p {
   cursor: pointer; }
 
 [property="settings"] summary {
+  display: flex;
   margin: 0.5rem 0;
-  font-size: 3rem;
+  font-size: 4rem;
   cursor: default; }
+  [property="settings"] summary::-webkit-details-marker {
+    display: none; }
+  [property="settings"] summary:after {
+    display: inline-block;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 2.2rem;
+    content: "\f142";
+    font-family: 'FontAwesome';
+    -webkit-font-smoothing: antialiased; }
+
+[property="settings"][open] summary:after {
+  content: "\f057";
+  margin-right: 1rem; }
 
 [property="settings"] .fa {
   margin-right: 1rem; }
@@ -134,6 +145,8 @@ footer {
   text-align: center; }
   footer * {
     color: currentColor; }
+  footer p {
+    margin: 0; }
 
 [property="flashcard"] {
   position: relative;
@@ -276,7 +289,15 @@ footer {
     content: "\f0ac" !important;
     font-family: 'FontAwesome';
     -webkit-font-smoothing: antialiased;
-    margin-right: 1rem; } }
+    margin-right: 1rem; }
+  [property="settings"] summary {
+    font-size: 2.5rem; }
+    [property="settings"] summary:after {
+      margin-right: 0.8rem; }
+  [property="settings"][open] summary:after {
+    margin-right: 0; }
+  footer {
+    font-size: 1.5rem; } }
 
 [property="flashcard"]:not([mv-mode="edit"]) details {
   display: none; }

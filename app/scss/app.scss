@@ -54,14 +54,7 @@ footer {
     padding: 1rem 2rem;
     color: white;
     background-color: var(--bg-circle-color);
-    font-weight: lighter;
-    font-family: system-ui;
-}
-
-footer {
-    p {
-        margin: 0;
-    }
+    font-family: var(--main-font);
 }
 
 [property="settings"] {
@@ -77,9 +70,31 @@ footer {
     }
 
     summary {
+        display: flex;
         margin: 0.5rem 0;
-        font-size: 3rem;
+        font-size: 4rem;
         cursor: default;
+
+        &::-webkit-details-marker {
+            display: none;
+        }
+
+        &:after {
+            display: inline-block;
+            align-self: center;
+            margin-left: auto;
+            margin-right: 2.2rem;
+            content: "\f142";
+            font-family: 'FontAwesome';
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+
+    &[open] {
+        summary:after {
+            content: "\f057";
+            margin-right: 1rem;
+        }
     }
 
     .fa {
@@ -174,6 +189,10 @@ footer {
 
     * {
         color: currentColor;
+    }
+
+    p {
+        margin: 0;
     }
 }
 
@@ -366,6 +385,26 @@ footer {
         font-family: 'FontAwesome';
         -webkit-font-smoothing: antialiased;
         margin-right: 1rem;
+    }
+
+    [property="settings"] {
+        summary {
+            font-size: 2.5rem;
+
+            &:after {
+                margin-right: 0.8rem;
+            }
+        }
+
+        &[open] {
+            summary:after {
+                margin-right: 0;
+            }
+        }
+    }
+
+    footer {
+        font-size: 1.5rem;
     }
 }
 
