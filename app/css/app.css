@@ -45,6 +45,9 @@ footer {
   font-weight: lighter;
   font-family: system-ui; }
 
+footer p {
+  margin: 0; }
+
 [property="settings"] button {
   margin: 0.3rem;
   line-height: 2rem;
