@@ -416,6 +416,6 @@ footer {
 }
 
 // Hide everything while the app is being loaded
-[mv-progress="Loading"] > * {
+[mv-progress="Loading"] * {
     visibility: hidden;
 }

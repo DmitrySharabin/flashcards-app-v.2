@@ -302,5 +302,5 @@ footer {
 [property="flashcard"]:not([mv-mode="edit"]) details {
   display: none; }
 
-[mv-progress="Loading"] > * {
+[mv-progress="Loading"] * {
   visibility: hidden; }
