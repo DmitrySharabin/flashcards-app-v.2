@@ -38,10 +38,11 @@ function clear(cb) {
     cb();
 }
 
-exports.build = series(clear, parallel(buildSass, copyFiles));
-
-exports.default = function (cb) {
+function watchFiles(cb) {
     watch('app/scss/**/*.scss', sassTask);
-    parallel(browserSyncTask, sassTask);
     cb();
 }
+
+exports.build = series(clear, parallel(buildSass, copyFiles));
+
+exports.default = parallel(browserSyncTask, sassTask);
