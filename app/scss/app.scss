@@ -59,7 +59,7 @@ footer {
 }
 
 [property="settings"] {
-    >*, [class="mv-export"] {
+    button {
         margin: 0.3rem;
         line-height: 2rem;
         font-size: 2rem;
@@ -85,16 +85,6 @@ footer {
         margin-left: 1rem;
     }
 
-    [class="mv-edit"] {
-        padding-left: 0;
-
-        &::before {
-            content: "\f040";
-            margin-right: 0.7rem;
-            font-family: 'FontAwesome';
-        }
-    }
-
     [property="characters"] {
         border: none !important;
         padding: 0 !important;
@@ -109,10 +99,6 @@ footer {
 
     &:not([mv-mode="edit"]) [class*="fa-font"] {
         display: none;
-    }
-
-    &[mv-mode="edit"] [class="mv-edit"]::before {
-        color: hsl(0, 100%, 60%);
     }
 }
 
@@ -344,12 +330,6 @@ footer {
         font-family: initial;
         font-size: 2.2rem;
         line-height: 2.2rem;
-    }
-
-    [class="mv-edit"] {
-        overflow: hidden;
-        width: 1ch;
-        margin-right: 1rem;
     }
 }
 

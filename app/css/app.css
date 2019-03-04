@@ -45,7 +45,7 @@ footer {
   font-weight: lighter;
   font-family: system-ui; }
 
-[property="settings"] > *, [property="settings"] [class="mv-export"] {
+[property="settings"] button {
   margin: 0.3rem;
   line-height: 2rem;
   font-size: 2rem;
@@ -67,17 +67,6 @@ footer {
   margin: 0;
   margin-left: 1rem; }
 
-[property="settings"] > section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, max-content)); }
-
-[property="settings"] [class="mv-edit"] {
-  padding-left: 0; }
-  [property="settings"] [class="mv-edit"]::before {
-    content: "\f040";
-    margin-right: 0.7rem;
-    font-family: 'FontAwesome'; }
-
 [property="settings"] [property="characters"] {
   border: none !important;
   padding: 0 !important; }
@@ -89,9 +78,6 @@ footer {
 
 [property="settings"]:not([mv-mode="edit"]) [class*="fa-font"] {
   display: none; }
-
-[property="settings"][mv-mode="edit"] [class="mv-edit"]::before {
-  color: #ff3333; }
 
 [class*="mv-add-flashcard"] {
   width: 4.5rem;
@@ -266,11 +252,7 @@ footer {
     font-weight: 300;
     font-family: initial;
     font-size: 2.2rem;
-    line-height: 2.2rem; }
-  [class="mv-edit"] {
-    overflow: hidden;
-    width: 1ch;
-    margin-right: 1rem; } }
+    line-height: 2.2rem; } }
 
 [property="flashcard"]:not([mv-mode="edit"]) details {
   display: none; }
