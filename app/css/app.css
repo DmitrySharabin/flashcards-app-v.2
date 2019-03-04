@@ -67,10 +67,12 @@ footer {
   margin: 0;
   margin-left: 1rem; }
 
-[property="settings"] [class="mv-edit"]::before {
-  content: "\f040";
-  margin-right: 0.7rem;
-  font-family: 'FontAwesome'; }
+[property="settings"] [class="mv-edit"] {
+  padding-left: 0; }
+  [property="settings"] [class="mv-edit"]::before {
+    content: "\f040";
+    margin-right: 0.7rem;
+    font-family: 'FontAwesome'; }
 
 [property="settings"] [property="characters"] {
   border: none !important;
