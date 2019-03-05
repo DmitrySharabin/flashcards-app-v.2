@@ -281,6 +281,8 @@ footer {
     margin-top: 3rem; }
   [property="flashcard"][mv-mode="edit"] meta {
     display: none; }
+  [property="flashcard"]:not([mv-mode="edit"]) details {
+    display: none; }
 
 .mv-popup {
   font-family: var(--main-font) !important; }
@@ -306,9 +308,6 @@ footer {
     margin-right: 0; }
   footer {
     font-size: 1.5rem; } }
-
-[property="flashcard"]:not([mv-mode="edit"]) details {
-  display: none; }
 
 [mv-progress="Loading"] * {
   visibility: hidden; }

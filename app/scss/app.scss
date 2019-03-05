@@ -375,6 +375,13 @@ footer {
             display: none;
         }
     }
+
+    &:not([mv-mode="edit"]) {
+        // Make special characters visible only in the edit mode
+        details {
+            display: none;
+        }
+    }
 }
 
 .mv-popup {
@@ -418,13 +425,6 @@ footer {
 
     footer {
         font-size: 1.5rem;
-    }
-}
-
-[property="flashcard"]:not([mv-mode="edit"]) {
-    // Make special characters visible only in the edit mode
-    details {
-        display: none;
     }
 }
 
