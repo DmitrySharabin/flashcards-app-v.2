@@ -305,7 +305,7 @@ footer {
     font-size: 2.5rem; }
     [property="settings"] > summary:after {
       margin-right: 0.8rem;
-      margin-top: 0.6rem; }
+      margin-top: 0.8rem; }
   [property="settings"][open] > summary:after {
     margin-right: 0; }
   footer {
