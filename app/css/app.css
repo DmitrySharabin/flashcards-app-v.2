@@ -115,6 +115,8 @@ footer {
   cursor: pointer; }
   [property="settings"] .filter-section summary::-webkit-details-marker {
     display: none; }
+  [property="settings"] .filter-section .mv-popup {
+    position: absolute; }
 
 [class*="mv-add-flashcard"] {
   width: 4.5rem;

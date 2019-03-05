@@ -153,6 +153,10 @@ footer {
         summary::-webkit-details-marker {
             display: none;
         }
+
+        .mv-popup {
+            position: absolute; // Polyfill till I find another solution
+        }
     }
 }
 
