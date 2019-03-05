@@ -45,7 +45,8 @@
 
             <details class="filter-section">
                 <summary>
-                    <i class="fa fa-filter"></i><span class="hide">[phrase("filter", language)]</span>
+                    <i class="fa fa-filter [if(flashcardsFilter != 'all', highlight)]"></i>
+                    <span class="hide">[phrase("filter", language)]</span>
                 </summary>
                 <label class="mv-popup">[phrase("filter", language)]:
                     <select property="flashcardsFilter" mv-storage="none">
