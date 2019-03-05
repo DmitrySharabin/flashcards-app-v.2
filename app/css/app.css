@@ -114,8 +114,7 @@ footer {
   height: 4.5rem;
   margin: 1rem 2rem 0;
   margin-right: auto;
-  padding: 1.35rem;
-  padding-top: 1.2rem;
+  padding: 1.35rem 1.4rem;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
@@ -130,7 +129,7 @@ footer {
   [class*="mv-add-flashcard"]:hover {
     width: min-content; }
   [class*="mv-add-flashcard"] .fa {
-    margin-right: 1.25rem; }
+    margin-right: 1.3rem; }
 
 main {
   margin: 2rem 1rem;
