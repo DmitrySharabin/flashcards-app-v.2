@@ -18,7 +18,7 @@
     <title>Flashcards</title>
 </head>
 
-<body mv-app="flashcards" mv-storage="local" mv-init="example.json" mv-autosave>
+<body mv-app="flashcards" mv-storage="local" mv-init="example.json" mv-autosave mv-plugins="sort">
     <header>
         <details property="settings" class="mv-bar" mv-bar="edit import export">
             <summary>[phrase("app", language)]</summary>
@@ -43,6 +43,18 @@
                 <i class="fa fa-download"></i><span class="hide">[phrase("export", language)]</span>
             </button>
 
+            <details class="filter-section">
+                <summary>
+                    <i class="fa fa-filter"></i><span class="hide">[phrase("filter", language)]</span>
+                </summary>
+                <label class="mv-popup">[phrase("filter", language)]:
+                    <select property="flashcardsFilter" mv-storage="none">
+                        <option value="all">[phrase("show-all", language)]</option>
+                        <option mv-multiple="filterBy" mv-value="filterOptions" value="[filterBy]">[filterBy]</option>
+                    </select>
+                </label>
+            </details>
+
             <button mv-if="count(flashcard) > 0" mv-action="delete(flashcard)">
                 <i class="fa fa-trash"></i><span class="hide">[phrase("delete", language)]</span>
             </button>
@@ -57,7 +69,8 @@
         <article mv-multiple="flashcard"
                  data-uppercase-letter="[uppercase(source.charAt(0))]"
                  data-lowercase-letter="[lowercase(source.charAt(0))]"
-                 data-bgc-index="[$index mod 5 + 1]">
+                 data-bgc-index="[$index mod 5 + 1]"
+                 class="[if(flashcardsFilter != 'all' and flashcardsFilter != uppercase(idify(get(source, 0))), 'filtered')]">
 
             <p property="source" aria-label="[phrase('source', language)]"></p>
             <details mv-if="len(characters) > 0">
@@ -102,8 +115,20 @@
         </p>
     </footer>
 
-    <!-- Available languages -->
+    <!-- Extra Functionality -->
 
+    <!-- Data for Filter Widget -->
+    <section hidden>
+        <!-- Get the collection of the first letters of all the source phrases -->
+        <span mv-multiple="firstLetter"
+           mv-value="split(source, '')"
+           mv-storage="none"></span>
+
+        <!-- Remove extra accents, filter out duplicates, make them uppercase and sort them -->
+        <meta property="filterOptions" content="[sort(uppercase(unique(idify(firstLetter))))]">
+    </section>
+
+    <!-- Available languages -->
     <div hidden>
         <select id="languages">
             <option value="en">English</option>
@@ -112,7 +137,6 @@
     </div>
 
     <!-- Localization Phrases -->
-
     <datalist class="mv-phrases" lang="en">
         <option value="app">Flashcards</option>
         <!-- Headers -->
@@ -126,6 +150,9 @@
         <option value="export">Download</option>
         <option value="delete">Delete</option>
         <option value="new">Add flashcard</option>
+        <option value="filter">Filter</option>
+        <!-- Text -->
+        <option value="show-all">Show All</option>
     </datalist>
 
     <datalist class="mv-phrases" lang="ru">
@@ -141,6 +168,9 @@
         <option value="export">Сохранить</option>
         <option value="delete">Удалить</option>
         <option value="new">Создать карточку</option>
+        <option value="filter">Фильтровать</option>
+        <!-- Text -->
+        <option value="show-all">Показать все</option>
     </datalist>
 </body>
 
