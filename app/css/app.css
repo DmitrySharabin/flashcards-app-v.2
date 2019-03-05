@@ -42,7 +42,8 @@ footer {
   padding: 1rem 2rem;
   color: white;
   background-color: var(--bg-circle-color);
-  font-family: var(--main-font); }
+  font-family: var(--main-font);
+  -webkit-font-smoothing: antialiased; }
 
 [property="settings"] button {
   margin: 0.3rem;
@@ -52,7 +53,8 @@ footer {
   background: none;
   border: none;
   color: white;
-  cursor: pointer; }
+  cursor: pointer;
+  font-family: var(--main-font); }
 
 [property="settings"] summary {
   margin: 0.5rem 0;
@@ -66,8 +68,7 @@ footer {
     margin-top: 1.2rem;
     float: right;
     content: "\f142";
-    font-family: 'FontAwesome';
-    -webkit-font-smoothing: antialiased; }
+    font-family: 'FontAwesome'; }
 
 [property="settings"][open] summary:after {
   content: "\f057";
@@ -91,7 +92,7 @@ footer {
     content: attr(aria-label) !important;
     color: white;
     font-weight: 100;
-    font-family: system-ui; }
+    font-family: var(--main-font); }
 
 [property="settings"] [property="language"] {
   border: none !important;
@@ -103,7 +104,7 @@ footer {
     content: attr(aria-label) !important;
     color: white;
     font-weight: 100;
-    font-family: system-ui; }
+    font-family: var(--main-font); }
 
 [property="settings"]:not([mv-mode="edit"]) .hide-icon {
   display: none; }
@@ -282,12 +283,10 @@ footer {
   [property="characters"][mv-mode="edit"]::before {
     content: "\f031" !important;
     font-family: 'FontAwesome';
-    -webkit-font-smoothing: antialiased;
     margin-right: 1rem; }
   [property="language"][mv-mode="edit"]::before {
     content: "\f0ac" !important;
     font-family: 'FontAwesome';
-    -webkit-font-smoothing: antialiased;
     margin-right: 1rem; }
   [property="settings"] summary {
     font-size: 2.5rem; }

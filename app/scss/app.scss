@@ -55,6 +55,7 @@ footer {
     color: white;
     background-color: var(--bg-circle-color);
     font-family: var(--main-font);
+    -webkit-font-smoothing: antialiased;
 }
 
 [property="settings"] {
@@ -67,6 +68,7 @@ footer {
         border: none;
         color: white;
         cursor: pointer;
+        font-family: var(--main-font);
     }
 
     summary {
@@ -85,7 +87,6 @@ footer {
             float: right;
             content: "\f142";
             font-family: 'FontAwesome';
-            -webkit-font-smoothing: antialiased;
         }
     }
 
@@ -119,7 +120,7 @@ footer {
             content: attr(aria-label) !important;
             color: white;
             font-weight: 100;
-            font-family: system-ui;
+            font-family: var(--main-font);
         }
     }
 
@@ -136,7 +137,7 @@ footer {
             content: attr(aria-label) !important;
             color: white;
             font-weight: 100;
-            font-family: system-ui;
+            font-family: var(--main-font);
         }
     }
 
@@ -375,14 +376,12 @@ footer {
     [property="characters"][mv-mode="edit"]::before {
         content: "\f031" !important;
         font-family: 'FontAwesome';
-        -webkit-font-smoothing: antialiased;
         margin-right: 1rem;
     }
 
     [property="language"][mv-mode="edit"]::before {
         content: "\f0ac" !important;
         font-family: 'FontAwesome';
-        -webkit-font-smoothing: antialiased;
         margin-right: 1rem;
     }
 
