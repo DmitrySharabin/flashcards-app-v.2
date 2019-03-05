@@ -1,0 +1,158 @@
+{
+	"settings": {
+		"characters": "àâäçèéêëîïôùûüœ",
+		"language": "ru"
+	},
+	"flashcard": [
+		{
+			"source": "Réclamer",
+			"translation": "Настойчиво просить, требовать",
+			"example": "Les employés réclament des salaires plus élevés."
+		},
+		{
+			"source": "Quasiment",
+			"translation": "Практически",
+			"example": "L’eau s’ecoule quasiment sans bruit."
+		},
+		{
+			"source": "À l’égard de",
+			"translation": "К, по отношению к...",
+			"example": "Pourquoi le gouvernement a-t-il été si indifférent à l’égard de ceux qui ont perdu leur emploi ?"
+		},
+		{
+			"source": "Se faire part de",
+			"translation": "Делиться, сообщать",
+			"example": "Il est toujours possible de faire part de ses inquiétudes au médecin."
+		},
+		{
+			"source": "Stupéfaction (f)",
+			"translation": "Изумление, ошеломление",
+			"example": "Causer une profonde stupéfaction."
+		},
+		{
+			"source": "Réconforter",
+			"translation": "Подбодрить, утешать",
+			"example": "J’essaie de réconforter mon ami."
+		},
+		{
+			"source": "Verser",
+			"translation": "Лить, проливать",
+			"example": "Verser le sirop dans les pots; verser les larmes."
+		},
+		{
+			"source": "Déroulement (m)",
+			"translation": "Ход, протекание, развитие событий",
+			"example": "Le déroulement du temps."
+		},
+		{
+			"source": "Se flatter de qch",
+			"translation": "Кичиться чем-либо",
+			"example": "Nombre de personnes se flattent d’avoir plus de possibilités."
+		},
+		{
+			"source": "Subir",
+			"translation": "Переносить, испытывать",
+			"example": "Subir une opération. Subir des pressions."
+		},
+		{
+			"source": "Navré(e)",
+			"translation": "Огорченный, сожалеющий",
+			"example": "Elle paraissait navrée de mon scepticisme. Je suis vraiment navré, qu’ils ne soient pas ici."
+		},
+		{
+			"source": "Être avare de",
+			"translation": "Быть скупым на...",
+			"example": "Il est avare de bonnes paroles."
+		},
+		{
+			"source": "S’épancher",
+			"translation": "Изливать душу, проливаться",
+			"example": "J’avais besoin de m’épancher."
+		},
+		{
+			"source": "Entrer en vigueur",
+			"translation": "Вступать в силу",
+			"example": "Le présent contrat entre en vigueur au moment de sa signature par les parties."
+		},
+		{
+			"source": "Consentir à",
+			"translation": "Давать согласие на ч-л",
+			"example": "Elle consent à me voir jeudi."
+		},
+		{
+			"source": "Un homme digne de foi",
+			"translation": "Заслуживающий доверия, достойный человек",
+			"example": "Laverdon, qui est pourtant un homme digne de foi, m’a affirmé qu’il avait vécu trente-cinq jours en ce seul mois de mai."
+		},
+		{
+			"source": "En tas",
+			"translation": "В кучу, кучей",
+			"example": "Nous avons vu soudain ses vêtements tomber en tas sur le tapis."
+		},
+		{
+			"source": "Paradisiaque",
+			"translation": "Райский",
+			"example": "Une île paradisiaque."
+		},
+		{
+			"source": "Dépit (f)",
+			"translation": "Досада",
+			"example": "L’idée que le monde a pu vivre sans moi m’a causé et me cause encore quelque dépit."
+		},
+		{
+			"source": "À part entière",
+			"translation": "Полноправный",
+			"example": "Cet emploi leur permette d'être classés dans la catégorie des vivants à part entière."
+		},
+		{
+			"source": "Sincérité (f)",
+			"translation": "Искренность, откровенность",
+			"example": "La sincérité du témoin ne peut être suspectée."
+		},
+		{
+			"source": "Hypocrisie (f)",
+			"translation": "Лицемерие, фальшь",
+			"example": "Assez d'hypocrisie, jouons cartes sur table."
+		},
+		{
+			"source": "Ignoble",
+			"translation": "Подлый, гнусный, неблагородный",
+			"example": "Perruque a été ignoble de suffisance, d’hypocrisie et de méchanceté."
+		},
+		{
+			"source": "Non-être (m)",
+			"translation": "Небытие",
+			"example": "Il sombrera dans le non-être et y demeurera vingt-cinq jours."
+		},
+		{
+			"source": "Négliger de f. qqch",
+			"translation": "Игнорировать, забывать",
+			"example": "Ma concierge, elle a négligé de m’apporter mon courrier."
+		},
+		{
+			"source": "Copieux",
+			"translation": "Обильный, сытный, плотный",
+			"example": "Repas copieux."
+		},
+		{
+			"source": "Vengeance (f)",
+			"translation": "Месть, возмездие",
+			"example": "Dans un esprit de vengeance je fais chaque jour deux très copieux repas au marché noir."
+		},
+		{
+			"source": "À peine",
+			"translation": "Едва, чуть, с трудом",
+			"example": "On remarque à peine son accent."
+		},
+		{
+			"source": "En toute modestie",
+			"translation": "Скромно",
+			"example": "Dire en toute modestie."
+		},
+		{
+			"source": "Adroitement",
+			"translation": "Ловко, искусно, умело",
+			"example": "Je l'ai cuisiné adroitement."
+		}
+	]
+}

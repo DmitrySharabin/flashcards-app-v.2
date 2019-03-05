@@ -1,6 +1,7 @@
 {
 	"settings": {
-		"characters": "àâäçèéêëîïôùûüœ"
+		"characters": "àâäçèéêëîïôùûüœ",
+		"language": "en"
 	},
 	"flashcard": [
 		{
