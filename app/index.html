@@ -67,8 +67,8 @@
 
     <main>
         <article mv-multiple="flashcard"
-                 data-uppercase-letter="[uppercase(source.charAt(0))]"
-                 data-lowercase-letter="[lowercase(source.charAt(0))]"
+                 data-uppercase-letter="[uppercase(get(source, 0))]"
+                 data-lowercase-letter="[lowercase(get(source, 0))]"
                  data-bgc-index="[$index mod 5 + 1]"
                  class="[if(flashcardsFilter != 'all' and flashcardsFilter != uppercase(idify(get(source, 0))), 'filtered')]">
 
