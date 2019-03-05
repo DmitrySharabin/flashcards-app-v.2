@@ -2,6 +2,7 @@
 
 const { src, dest, watch, parallel, series } = require('gulp');
 const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
 const cleanDest = require('gulp-clean-dest');
 
@@ -24,6 +25,10 @@ function browserSyncTask() {
 function buildSass() {
     return src('app/scss/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({
+			browsers: ["cover 90%", "since 2016"],
+			cascade: false
+		}))
         .pipe(dest('dist/css'));
 }
 
