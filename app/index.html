@@ -122,8 +122,8 @@
     <section hidden>
         <!-- Get the collection of the first letters of all the source phrases -->
         <span mv-multiple="firstLetter"
-           mv-value="split(source, '')"
-           mv-storage="none"></span>
+              mv-value="split(source, '')"
+              mv-storage="none"></span>
 
         <!-- Remove extra accents, filter out duplicates, make them uppercase and sort them -->
         <meta property="filterOptions" content="[sort(uppercase(unique(idify(firstLetter))))]">
