@@ -43,7 +43,7 @@
                 <i class="fa fa-download"></i><span class="hide">[phrase("export", language)]</span>
             </button>
 
-            <details class="filter-section">
+            <details class="filter-section" mv-if="count(flashcard) > 0">
                 <summary>
                     <i class="fa fa-filter [if(flashcardsFilter != 'all', highlight)]"></i>
                     <span class="hide">[phrase("filter", language)]</span>
