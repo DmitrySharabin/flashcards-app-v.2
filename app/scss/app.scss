@@ -167,7 +167,7 @@ footer {
     }
 }
 
-[class*="mv-add-flashcard"] {
+.btn-add-flashcard {
     width: 4.5rem;
     height: 4.5rem;
     margin: 1rem 2rem 0;
@@ -194,6 +194,13 @@ footer {
     }
 }
 
+// Make the Add flashcard button visible only in edit mode
+[mv-app]:not([mv-mode="edit"]) {
+    .btn-add-flashcard {
+        display: none;
+    }
+}
+
 main {
     margin: 2rem 1rem;
     display: grid;
@@ -201,6 +208,11 @@ main {
     grid-gap: 2rem;
     justify-items: center;
     scroll-snap-type: y proximity;
+
+    // Hide built-in Add flashcard button
+    button.mv-add {
+        display: none !important;
+    }
 }
 
 footer {
@@ -393,7 +405,7 @@ footer {
     }
 
     &:not([mv-mode="edit"]) {
-        // Make special characters visible only in the edit mode
+        // Make special characters visible only in edit mode
         details {
             display: none;
         }
