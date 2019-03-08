@@ -132,12 +132,12 @@ function buildSW() {
       },
       {
         // Cache the underlying font files with a cache-first strategy for 1 year.
-        urlPattern: /.fontawesome\-webfont\.woff$/,
+        urlPattern: /.*fontawesome\-webfont.*/,
 
         handler: 'CacheFirst',
 
         options: {
-          cacheName: 'font-awesome-webfont',
+          cacheName: 'font-awesome-webfonts',
 
           cacheableResponse: {
             statuses: [0, 200],
