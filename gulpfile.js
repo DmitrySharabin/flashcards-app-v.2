@@ -108,12 +108,16 @@ function buildSW() {
       },
       {
         // Cache CSS, JavaScript and JSON Files.
-        urlPattern: new RegExp('^https:\/\/\.(?:css|js|json)$'),
+        urlPattern: /\.(?:css|js|json)$/,
 
         handler: 'StaleWhileRevalidate',
 
         options: {
           cacheName: 'static-resources',
+
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
         },
       }
     ],
