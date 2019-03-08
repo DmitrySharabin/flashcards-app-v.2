@@ -148,6 +148,7 @@ function buildSW() {
             maxEntries: 30,
           }
         },
+      }
     ],
   });
 }
