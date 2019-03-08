@@ -4,7 +4,7 @@
     "description": "This app is dedicated to foreign languages learners.",
     "theme_color": "#4c3833",
     "background_color": "#ffffff",
-    "display": "fullscreen",
+    "display": "standalone",
     "scope": "/",
     "start_url": "/",
     "icons": [
