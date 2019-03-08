@@ -121,17 +121,7 @@ function buildSW() {
         },
       },
       {
-        // Cache the Font Awesome stylesheets with a stale-while-revalidate strategy.
-        urlPattern: /.*font\-awesome.*\.css/,
-
-        handler: 'StaleWhileRevalidate',
-
-        options: {
-          cacheName: 'font-awesome-stylesheet',
-        },
-      },
-      {
-        // Cache the underlying font files with a cache-first strategy for 1 year.
+        // Cache the Font Awesome font files with a cache-first strategy for 1 year.
         urlPattern: /.*fontawesome\-webfont.*/,
 
         handler: 'CacheFirst',
