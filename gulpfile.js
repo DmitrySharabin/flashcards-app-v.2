@@ -34,7 +34,7 @@ function buildSass() {
 }
 
 function copyFiles() {
-    return src(['app/**/*.json', 'app/index.html'])
+    return src(['app/**/*', '!app/{scss,scss/**}'])
         .pipe(dest('dist'));
 
 }
