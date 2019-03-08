@@ -1,5 +1,11 @@
 # Flashcards App v.2
 
+![Application](/app/images/1.png)
+
+![Toolbar](app/images/2.png)
+
+![Flashcard](app/images/3.png)
+
 ## Setting up the environment (one time stuff)
 
 1. Either download the zip file or clone the repository
@@ -9,6 +15,10 @@
 ## Every time you work on Flashcards app
 
 Run `gulp` before making any changes, to automatically build every time you save.
+
+## Building and deploying the app
+
+Run `gulp build` and deploy the `dist` folder.
 
 ## License
 
