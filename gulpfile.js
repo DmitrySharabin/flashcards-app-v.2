@@ -119,7 +119,35 @@ function buildSW() {
             statuses: [0, 200],
           },
         },
-      }
+      },
+      {
+        // Cache the Font Awesome stylesheets with a stale-while-revalidate strategy.
+        urlPattern: /.*font\-awesome.*\.css/,
+
+        handler: 'StaleWhileRevalidate',
+
+        options: {
+          cacheName: 'font-awesome-stylesheet',
+        },
+      },
+      {
+        // Cache the underlying font files with a cache-first strategy for 1 year.
+        urlPattern: /.fontawesome\-webfont\.woff$/,
+
+        handler: 'CacheFirst',
+
+        options: {
+          cacheName: 'font-awesome-webfont',
+
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+
+          expiration: {
+            maxAgeSeconds: 60 * 60 * 24 * 365,
+            maxEntries: 30,
+          }
+        },
     ],
   });
 }
