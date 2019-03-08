@@ -51,7 +51,7 @@ function watchFiles(cb) {
 
 // See: https://developers.google.com/web/tools/workbox/guides/generate-service-worker/workbox-build
 function buildSW() {
-    // This will return a Promise
+  // This will return a Promise
   return workboxBuild.generateSW({
     globDirectory: 'dist',
     globPatterns: [
@@ -61,22 +61,62 @@ function buildSW() {
 
     // Define runtime caching rules.
     runtimeCaching: [{
-      // Match any request ends with .png, .jpg, .jpeg or .svg.
-      urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+        // Match any request ends with .png, .jpg, .jpeg or .svg.
+        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
 
-      // Apply a cache-first strategy.
-      handler: 'CacheFirst',
+        // Apply a cache-first strategy.
+        handler: 'CacheFirst',
 
-      options: {
-        // Use a custom cache name.
-        cacheName: 'images',
+        options: {
+          // Use a custom cache name.
+          cacheName: 'images',
 
-        // Only cache 10 images.
-        expiration: {
-          maxEntries: 10,
+          // Only cache 10 images.
+          expiration: {
+            maxEntries: 10,
+          },
         },
       },
-    }],
+      {
+        // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
+        urlPattern: new RegExp('^https:\/\/fonts\.googleapis\.com'),
+
+        handler: 'StaleWhileRevalidate',
+
+        options: {
+          cacheName: 'google-fonts-stylesheets',
+        },
+      },
+      {
+        // Cache the underlying font files with a cache-first strategy for 1 year.
+        urlPattern: new RegExp('^https:\/\/fonts\.gstatic\.com/'),
+
+        handler: 'CacheFirst',
+
+        options: {
+          cacheName: 'google-fonts-webfonts',
+
+          cacheableResponse: {
+            statuses: [0, 200],
+          },
+
+          expiration: {
+            maxAgeSeconds: 60 * 60 * 24 * 365,
+            maxEntries: 30,
+          }
+        },
+      },
+      {
+        // Cache CSS and JavaScript Files.
+        urlPattern: new RegExp('\.(?:js|css)$'),
+
+        handler: 'StaleWhileRevalidate',
+
+        options: {
+          cacheName: 'static-resources',
+        },
+      }
+    ],
   });
 }
 
