@@ -95,10 +95,19 @@
                         class="[if(capslock, on)]">⇪ Caps Lock</button>
             </details>
 
-            <p property="translation" aria-label="[phrase('translation', language)]"></p>
+            <label class="show-translation">
+                <input type="checkbox" property="translationVisible" mv-storage="none">
+                <i class="fa fa-eye"></i>[phrase(if(translationVisible, hide, show) & "-translation", language)]
+            </label>
 
-            <p property="example" aria-label="[phrase('example', language)]"></p>
-            <details mv-if="len(characters) > 0">
+            <p property="translation"
+               aria-label="[phrase('translation', language)]"
+               mv-if="translationVisible"></p>
+
+            <p property="example"
+               aria-label="[phrase('example', language)]"
+               mv-if="translationVisible"></p>
+            <details mv-if="len(characters) > 0 and translationVisible">
                 <summary>[phrase("characters", language)]</summary>
 
                 <button mv-multiple
@@ -109,6 +118,22 @@
                 <button mv-action="set(capslock, !capslock)"
                         class="[if(capslock, on)]">⇪ Caps Lock</button>
             </details>
+
+            <section class="self-eval-buttons" mv-if="translationVisible">
+                <p>[phrase("evaluation", language)]</p>
+                <button mv-action="set(translationVisible, false), move(flashcard, 0)"
+                        title="[phrase('bad', language)]">
+                    👎
+                </button>
+                <button mv-action="set(translationVisible, false)"
+                        title="[phrase('good', language)]">
+                    👍
+                </button>
+                <button mv-action="set(translationVisible, false), move(flashcard, count($all))"
+                        title="[phrase('great', language)]">
+                    👏
+                </button>
+            </section>
         </article>
     </main>
 
@@ -153,6 +178,7 @@
         <option value="characters">Special Characters</option>
         <option value="translation">Translation</option>
         <option value="example">Example</option>
+        <option value="evaluation">Evaluate Yourself</option>
         <!-- Buttons -->
         <option value="edit">Edit</option>
         <option value="editing">Editing</option>
@@ -161,6 +187,11 @@
         <option value="delete">Delete</option>
         <option value="new-flashcard">Add flashcard</option>
         <option value="filter">Filter</option>
+        <option value="show-translation">Show Translation</option>
+        <option value="hide-translation">Hide Translation</option>
+        <option value="bad">Bad</option>
+        <option value="good">Good</option>
+        <option value="great">Great</option>
         <!-- Text -->
         <option value="show-all">Show All</option>
     </datalist>
@@ -173,6 +204,7 @@
         <option value="characters">Специальные символы</option>
         <option value="translation">Перевод</option>
         <option value="example">Пример</option>
+        <option value="evaluation">Оцените себя</option>
         <!-- Buttons -->
         <option value="edit">Редактировать</option>
         <option value="editing">Редактирование</option>
@@ -181,6 +213,11 @@
         <option value="delete">Удалить</option>
         <option value="new-flashcard">Создать карточку</option>
         <option value="filter">Фильтровать</option>
+        <option value="show-translation">Показать перевод</option>
+        <option value="hide-translation">Скрыть перевод</option>
+        <option value="bad">Плохо</option>
+        <option value="good">Хорошо</option>
+        <option value="great">Отлично</option>
         <!-- Text -->
         <option value="show-all">Показать все</option>
     </datalist>
