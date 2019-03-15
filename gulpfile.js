@@ -143,6 +143,6 @@ function buildSW() {
   });
 }
 
-exports.build = series(clear, parallel(buildSass, copyFiles), buildSW);
+exports.build = series(clear, buildSass, copyFiles, buildSW);
 
 exports.default = parallel(watchFiles, browserSyncTask, sassTask);
