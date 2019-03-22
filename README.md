@@ -4,7 +4,9 @@
 
 ![Toolbar](app/images/2.png)
 
-![Flashcard](app/images/3.png)
+![Flashcard in Read mode](app/images/4.png)
+
+![Flashcard in Edit mode](app/images/3.png)
 
 ## Setting up the environment (one time stuff)
 
