@@ -1,5 +1,7 @@
 # Flashcards App v.2
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/724b2e22-8359-46eb-b08b-ed73d51c73d7/deploy-status)](https://app.netlify.com/sites/flashcards-study/deploys)
+
 ![Application](/app/images/1.png)
 
 ![Toolbar](app/images/2.png)
