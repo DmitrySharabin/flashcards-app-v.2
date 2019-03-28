@@ -168,10 +168,10 @@ footer {
   padding-bottom: 4.2rem;
   padding-top: calc(var(--circle-r) * 1.45);
   color: var(--text-color);
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   background-color: var(--flashcard-bg-color);
   scroll-snap-align: start;
-  box-shadow: 2px 3px 20px rgba(0, 0, 0, 0.7), 0 0 12rem #8a4d0f inset;
+  box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.3), 0 0 5rem #a15912 inset;
   background-image: radial-gradient(at 50% 0, var(--text-color), transparent 60%);
   background-position-y: calc(var(--circle-r) * 1.4);
   background-size: 100% 0.25rem;
@@ -313,7 +313,7 @@ footer {
     [property="flashcard"][mv-mode="edit"] details:first-of-type {
       padding: 0.7rem 0; }
     [property="flashcard"][mv-mode="edit"] details:last-of-type {
-      padding-top: 0.5rem;
+      padding-top: 0.7rem;
       padding-bottom: 1rem; }
   [property="flashcard"][mv-mode="edit"] [property="translation"] {
     margin-top: 3rem; }
