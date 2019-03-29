@@ -125,13 +125,9 @@
                         title="[phrase('bad', language)]">
                     👎
                 </button>
-                <button mv-action="set(translationVisible, false)"
+                <button mv-action="set(translationVisible, false), move(flashcard, count($all))"
                         title="[phrase('good', language)]">
                     👍
-                </button>
-                <button mv-action="set(translationVisible, false), move(flashcard, count($all))"
-                        title="[phrase('great', language)]">
-                    👏
                 </button>
             </section>
         </article>
@@ -191,7 +187,6 @@
         <option value="hide-translation">Hide Translation</option>
         <option value="bad">Bad</option>
         <option value="good">Good</option>
-        <option value="great">Great</option>
         <!-- Text -->
         <option value="show-all">Show All</option>
     </datalist>
@@ -217,7 +212,6 @@
         <option value="hide-translation">Скрыть перевод</option>
         <option value="bad">Плохо</option>
         <option value="good">Хорошо</option>
-        <option value="great">Отлично</option>
         <!-- Text -->
         <option value="show-all">Показать все</option>
     </datalist>
