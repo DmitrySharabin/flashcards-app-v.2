@@ -60,7 +60,8 @@ footer {
 [property="settings"] > summary {
   margin: 0.5rem 0;
   font-size: 4rem;
-  cursor: default; }
+  cursor: default;
+  list-style: none; }
   [property="settings"] > summary::-webkit-details-marker {
     display: none; }
   [property="settings"] > summary:after {
@@ -114,8 +115,10 @@ footer {
   display: inline-block;
   margin: 0.3rem;
   cursor: pointer; }
-  [property="settings"] .filter-section summary::-webkit-details-marker {
-    display: none; }
+  [property="settings"] .filter-section summary {
+    list-style: none; }
+    [property="settings"] .filter-section summary::-webkit-details-marker {
+      display: none; }
   [property="settings"] .filter-section .mv-popup {
     position: absolute; }
 
