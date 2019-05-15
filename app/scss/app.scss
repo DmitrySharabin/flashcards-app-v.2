@@ -206,6 +206,7 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 2rem;
     justify-items: center;
+    align-items: start;
     scroll-snap-type: y proximity;
 }
 
