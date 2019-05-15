@@ -98,7 +98,7 @@
 
             <label class="show-translation">
                 <input type="checkbox" property="translationVisible" mv-storage="none">
-                <i class="fa fa-eye"></i>[phrase(if(translationVisible, hide, show) & "-translation", language)]
+                <i class="fa [if(!translationVisible, 'fa-eye-slash', 'fa-eye')]"></i>[phrase(if(translationVisible, hide, show) & "-translation", language)]
             </label>
 
             <p property="translation"
