@@ -154,6 +154,7 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-gap: 2rem;
   justify-items: center;
+  align-items: start;
   scroll-snap-type: y proximity; }
 
 footer {
@@ -357,3 +358,8 @@ footer {
 
 [mv-progress="Loading"] * {
   visibility: hidden; }
+
+.mv-bar .mv-edit::before {
+  margin-right: 1rem;
+  font-family: 'FontAwesome';
+  content: "\f040"; }

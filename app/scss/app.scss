@@ -502,3 +502,10 @@ footer {
 [mv-progress="Loading"] * {
     visibility: hidden;
 }
+
+// Polyfill
+.mv-bar .mv-edit::before {
+    margin-right: 1rem;
+    font-family: 'FontAwesome';
+    content: "\f040";
+}
